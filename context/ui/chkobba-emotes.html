@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Chkobba - Emotes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;900&family=Cairo:wght@500;700&family=Lora:wght@500;700&family=Playfair+Display:wght@900&family=Marcellus&family=Fredoka:wght@500;600;700&family=Chakra+Petch:wght@600;700&display=swap" rel="stylesheet" />
+<script src="chkobba-decks.js"></script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Inter,sans-serif;background:#111318;color:#EEF0F5;padding:0 16px 80px;line-height:1.45}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:2px solid #FFD23F;outline-offset:2px}
+
+/* page chrome */
+.bar{position:sticky;top:0;z-index:100;margin:0 -16px;padding:10px 20px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;background:rgba(17,19,24,.94);backdrop-filter:blur(8px);border-bottom:1px solid #2a2e38}
+.bar b{font-weight:900;letter-spacing:.04em}
+.bar a{color:#9aa3b5;font-size:13px}
+.seg{display:flex;gap:4px;background:#1b1f27;border:1px solid #2a2e38;border-radius:999px;padding:3px}
+.seg button{border:0;background:none;border-radius:999px;padding:5px 12px;font-size:12px;font-weight:700;color:#9aa3b5}
+.seg button.on{background:#EEF0F5;color:#111318}
+.lab{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#7d8597}
+.head{max-width:1100px;margin:28px auto 22px}
+.head h1{font:900 32px Inter,sans-serif;letter-spacing:-.01em}
+.head p{margin-top:8px;max-width:840px;font-size:14px;color:#9aa3b5}
+.stage{display:flex;flex-wrap:wrap;gap:40px;justify-content:center}
+.slot{display:flex;flex-direction:column;align-items:center;gap:10px}
+.slot h2{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#9aa3b5}
+.tools{display:flex;gap:8px;min-height:30px}
+.tools button{border:1px solid #2a2e38;background:#1b1f27;border-radius:999px;padding:5px 12px;font-size:12px;font-weight:700}
+.notes{max-width:1100px;margin:40px auto 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
+.note{background:#181b22;border:1px solid #2a2e38;border-radius:16px;padding:16px}
+.note h3{font-size:15px;margin-bottom:8px}
+.note ul{padding-left:18px;font-size:13px;color:#c8cdd8}.note li{margin-bottom:6px}
+.note code{color:#8fd3ff}
+
+/* ---------- themes (one per table style) ---------- */
+.phone{--r-btn:12px}
+.t-cafe{--bg:linear-gradient(#5B3720,#3E2412 60%,#2A180B);--felt:linear-gradient(#2A7050,#1F5E3F 55%,#174A31);--felt-b:3px solid #8E6B22;--ink:#FBF3DC;--mu:rgba(251,243,220,.7);--us:#1D5C63;--them:#7A1F2B;--ring:#C9A24B;--acc:#F0C14D;--on-acc:#2A180B;
+  --bb:#F4E9C9;--bi:#2A180B;--bline:#CDB98A;--tray:#F4E9C9;--tray-i:#2A180B;--chip:#fff8e6;--font:Lora,serif;--disp:'Playfair Display',serif;--r-btn:12px}
+.t-minimal{--bg:#0A0C10;--felt:#12161C;--felt-b:1px solid #262D38;--ink:#F4F6FA;--mu:#8A94A6;--us:#B6F23C;--them:#FF6B5B;--ring:#262D38;--acc:#B6F23C;--on-acc:#0A0C10;
+  --bb:#F4F6FA;--bi:#0A0C10;--bline:#F4F6FA;--tray:#1A2028;--tray-i:#F4F6FA;--chip:#222A34;--font:Inter,sans-serif;--disp:Inter,sans-serif;--r-btn:16px}
+.t-sahara{--bg:linear-gradient(#0B0F2A,#1A1B48 55%,#2B2658);--felt:radial-gradient(circle,#8C5642 0 30%,#7A4A3A 31% 45%,#8C5642 46% 60%,#7A4A3A 61%);--felt-b:3px solid #5C3527;--ink:#F3EAD8;--mu:#A9A4C4;--us:#4FD8C8;--them:#FF8A4C;--ring:#F4C95D;--acc:#F4C95D;--on-acc:#2A1D10;
+  --bb:#1C1A4A;--bi:#F3EAD8;--bline:rgba(244,201,93,.6);--tray:#1B1A44;--tray-i:#F3EAD8;--chip:rgba(255,255,255,.06);--font:Inter,sans-serif;--disp:Marcellus,serif;--r-btn:14px}
+.t-sidi{--bg:#EAF3FC;--felt:linear-gradient(#fff,#F3F8FE);--felt-b:3px solid #2166C9;--ink:#12294A;--mu:#4B6B96;--us:#2166C9;--them:#F2872E;--ring:#fff;--acc:#2166C9;--on-acc:#fff;
+  --bb:#fff;--bi:#12294A;--bline:#2166C9;--tray:#fff;--tray-i:#12294A;--chip:#EAF3FC;--font:Fredoka,sans-serif;--disp:Fredoka,sans-serif;--r-btn:18px}
+.t-neon{--bg:linear-gradient(#0E0B1F 30%,#1D1640);--felt:radial-gradient(ellipse at 50% 30%,#2A1F5E,#14102B 70%);--felt-b:2px solid #2DE2E6;--ink:#F3EEFF;--mu:#B3ABDC;--us:#2DE2E6;--them:#FF3D8B;--ring:#3A2D78;--acc:#FFD23F;--on-acc:#07050F;
+  --bb:#14102B;--bi:#F3EEFF;--bline:#FFD23F;--tray:#14102B;--tray-i:#F3EEFF;--chip:rgba(255,255,255,.05);--font:Inter,sans-serif;--disp:'Chakra Petch',sans-serif;--r-btn:14px}
+.t-sidi .felt{border-radius:150px 150px 30px 30px}
+.t-neon .felt{border-radius:110px 110px 26px 26px;box-shadow:0 0 18px rgba(45,226,230,.5)}
+.t-sahara .felt{border-radius:50%;aspect-ratio:1;height:auto;width:min(100%,300px);margin:auto}
+.t-neon .bub{box-shadow:0 0 14px rgba(255,210,63,.45)}
+.t-neon .bub .ph{text-shadow:0 0 8px #FFD23F;color:#FFD23F}
+.t-cafe .bub .ph{font-family:'Playfair Display',serif;font-weight:900}
+
+/* ---------- phone ---------- */
+.phone{width:390px;height:780px;border-radius:44px;overflow:hidden;position:relative;background:var(--bg);color:var(--ink);font-family:var(--font);box-shadow:0 0 0 10px #000,0 24px 48px rgba(0,0,0,.6);display:flex;flex-direction:column}
+.status{height:40px;flex:none}
+.score{flex:none;display:flex;justify-content:center;gap:10px;font:700 13px var(--disp);letter-spacing:.06em;padding:0 16px}
+.score span{padding:4px 12px;border-radius:999px;background:rgba(0,0,0,.18)}
+.t-sidi .score span{background:#fff;border:2px solid #BFD6F0}
+.score .u{color:var(--us)}.score .t{color:var(--them)}
+.t-cafe .score .u{color:#8fd3ff}.t-cafe .score .t{color:#ffb3bd}
+.region{position:relative;flex:1;min-height:0;margin:10px 12px 0;display:flex}
+.felt{position:absolute;inset:34px 6px 6px;background:var(--felt);border:var(--felt-b);border-radius:22px}
+.tbl{position:absolute;inset:110px 70px 70px;display:flex;flex-wrap:wrap;gap:8px 6px;justify-content:center;align-content:center;z-index:2}
+.seat{position:absolute;z-index:5;display:flex;flex-direction:column;align-items:center;gap:3px}
+.seat.top{top:0;left:50%;transform:translateX(-50%)}
+.seat.left{left:2px;top:46%;transform:translateY(-50%)}
+.seat.right{right:2px;top:46%;transform:translateY(-50%)}
+.av{position:relative;width:46px;height:46px;border-radius:50%;display:grid;place-items:center;font:700 18px var(--disp);color:#fff;background:var(--tc);border:3px solid var(--ring);cursor:pointer}
+.t-neon .av{border-radius:12px;background:#14102B;border:2px solid var(--tc);color:var(--tc);box-shadow:0 0 10px var(--tc)}
+.t-minimal .av{background:#222A34;border-color:var(--tc);color:#F4F6FA}
+.av .mute{position:absolute;right:-6px;bottom:-4px;width:20px;height:20px;border-radius:50%;background:#000c;color:#fff;font-size:11px;display:grid;place-items:center;border:1.5px solid #fff}
+.nm{font:700 11px var(--font);padding:1px 8px;border-radius:999px;background:rgba(0,0,0,.35);color:#fff}
+.t-sidi .nm{background:#fff;color:#12294A;border:2px solid #BFD6F0}
+
+/* ---------- emote bubble ---------- */
+.bub{position:absolute;z-index:20;background:var(--bb);color:var(--bi);border:2px solid var(--bline);border-radius:16px;padding:5px 10px;white-space:nowrap;box-shadow:0 8px 18px rgba(0,0,0,.35);
+  animation:bubIn .28s cubic-bezier(.2,1.6,.4,1) both, bubOut .35s ease-in 2.3s forwards;pointer-events:none;font:700 15px var(--font)}
+.bub .em{font-size:30px;line-height:1;display:block}
+.bub .ph{font:700 16px var(--disp);letter-spacing:.02em}
+.bub.ar .ph{font-family:Cairo,sans-serif}
+.bub::after{content:'';position:absolute;width:12px;height:12px;background:var(--bb);border:2px solid var(--bline);transform:rotate(45deg)}
+/* tail points back at the seat */
+.bub.from-top{top:76px;left:50%;margin-left:-0px;transform-origin:50% 0}
+.bub.from-top::after{top:-8px;left:calc(50% - 6px);border-right:0;border-bottom:0}
+.bub.from-left{left:62px;top:calc(46% - 46px);transform-origin:0 50%}
+.bub.from-left::after{left:-8px;top:calc(50% - 6px);border-right:0;border-top:0}
+.bub.from-right{right:62px;top:calc(46% - 46px);transform-origin:100% 50%}
+.bub.from-right::after{right:-8px;top:calc(50% - 6px);border-left:0;border-bottom:0}
+.bub.from-me{left:16px;bottom:62px;transform-origin:0 100%}
+.bub.from-me::after{left:18px;bottom:-8px;border-left:0;border-top:0}
+.bub.from-top{transform:translateX(-50%)}
+@keyframes bubIn{from{opacity:0;scale:.3}}
+@keyframes bubOut{to{opacity:0;translate:0 -10px}}
+
+/* ---------- me row + tray ---------- */
+.me{flex:none;position:relative;display:flex;align-items:center;gap:8px;padding:8px 14px 0;height:56px}
+.me .av{width:40px;height:40px;font-size:15px}
+.me .st{font:700 12px var(--font);color:var(--mu)}
+.quick{margin-left:auto;display:flex;gap:5px;position:relative}
+.qb{height:36px;min-width:36px;padding:0 8px;border-radius:var(--r-btn);border:1.5px solid var(--bline);background:var(--chip);color:var(--tray-i);font-size:17px;display:grid;place-items:center;transition:transform .1s}
+.t-cafe .qb{border-color:#8E6B22;background:rgba(0,0,0,.25);color:#FBF3DC}
+.qb.ph{font:700 12px var(--disp)}
+.qb:active{transform:scale(.92)}
+.quick.cool .qb{opacity:.4;pointer-events:none}
+.cd{position:absolute;inset:-4px;pointer-events:none;display:none}
+.quick.cool .cd{display:block}
+.cd i{position:absolute;left:0;bottom:-6px;height:3px;border-radius:2px;background:var(--acc);animation:cool 3s linear forwards}
+@keyframes cool{from{width:100%}to{width:0}}
+.smile{height:40px;width:40px;border-radius:50%;border:2px solid var(--bline);background:var(--chip);font-size:20px;display:grid;place-items:center}
+.t-cafe .smile{border-color:#C9A24B;background:rgba(0,0,0,.25)}
+.hand{flex:none;height:118px;display:flex;justify-content:center;align-items:flex-end;padding-bottom:16px}
+.hand .cw+.cw{margin-left:-10px}
+.hand .cw:nth-child(1){transform:rotate(-6deg) translateY(4px)}.hand .cw:nth-child(3){transform:rotate(6deg) translateY(4px)}
+
+/* full picker sheet */
+.tray{position:absolute;left:10px;right:10px;bottom:10px;z-index:30;background:var(--tray);color:var(--tray-i);border:2px solid var(--bline);border-radius:22px;padding:12px;box-shadow:0 -10px 30px rgba(0,0,0,.4);animation:up .22s ease-out}
+.t-cafe .tray{border-color:#CDB98A}
+@keyframes up{from{transform:translateY(30px);opacity:0}}
+.tray h4{display:flex;align-items:center;font:700 13px var(--disp);letter-spacing:.06em;margin-bottom:8px}
+.tray h4 small{margin-left:8px;font:500 11px var(--font);opacity:.65;letter-spacing:0}
+.tray h4 button{margin-left:auto;border:0;background:rgba(127,127,127,.18);width:28px;height:28px;border-radius:50%}
+.grid{display:grid;grid-template-columns:repeat(6,1fr);gap:6px}
+.grid.ph{grid-template-columns:repeat(3,1fr);margin-top:8px}
+.ge{height:46px;border-radius:12px;border:1.5px solid rgba(127,127,127,.3);background:var(--chip);font-size:24px;display:grid;place-items:center;position:relative}
+.grid.ph .ge{font:700 13px var(--disp);height:40px}
+.grid.ph .ge.ar{font-family:Cairo,sans-serif;font-size:14px}
+.ge.lock{opacity:.45}
+.ge.lock::after{content:'🔒';position:absolute;right:3px;top:1px;font-size:10px}
+.tray .pack{margin-top:10px;font:500 11px var(--font);opacity:.7;text-align:center}
+
+/* mute menu */
+.menu{position:absolute;z-index:40;background:var(--tray);color:var(--tray-i);border:2px solid var(--bline);border-radius:14px;padding:6px;min-width:180px;box-shadow:0 10px 24px rgba(0,0,0,.45)}
+.menu button{display:block;width:100%;text-align:left;border:0;background:none;padding:8px 10px;border-radius:10px;font:600 13px var(--font)}
+.menu button:hover{background:rgba(127,127,127,.15)}
+.menu .who{padding:4px 10px 6px;font:700 11px var(--font);opacity:.6;letter-spacing:.08em;text-transform:uppercase}
+.toast{position:absolute;left:50%;top:60px;transform:translateX(-50%);background:#000d;color:#fff;font:600 12px Inter,sans-serif;padding:6px 14px;border-radius:999px;z-index:50;opacity:0;transition:opacity .2s;white-space:nowrap}
+.toast.show{opacity:1}
+
+@media (prefers-reduced-motion:reduce){.bub{animation:bubOut .35s ease-in 2.3s forwards}.cd i{animation:none}}
+</style>
+</head>
+<body>
+
+<div class="bar">
+  <b>Emotes</b>
+  <a href="chkobba-designs-index.html">&larr; All directions</a>
+  <span class="lab">Table</span>
+  <div class="seg" id="skin"></div>
+  <span class="lab">Tray</span>
+  <div class="seg" id="tray"><button data-v="quick" class="on">Quick row</button><button data-v="smile">One button</button></div>
+  <span class="lab">Language</span>
+  <div class="seg" id="lang"><button data-v="en" class="on">English</button><button data-v="aeb">تونسي</button></div>
+</div>
+
+<div class="head">
+  <h1>Emotes &middot; a fixed set, no typing</h1>
+  <p>Players react with a short list of emoji and Tunisian phrases. Nothing is typed, so there is nothing to moderate. A bubble pops out of the sender's seat for about 2.5 seconds, styled by the table design. Try the live table: send an emote, and the bots answer now and then. Tap an opponent's avatar to mute them. After you send one there is a 3-second cooldown. Switch the table style and language above.</p>
+</div>
+
+<div class="stage">
+  <div class="slot"><h2>a &middot; Live table</h2><div class="tools"><button id="a-bots">Bots: chatty</button></div><div class="phone" id="f-live"></div></div>
+  <div class="slot"><h2>b &middot; Full picker</h2><div class="tools"></div><div class="phone" id="f-pick"></div></div>
+  <div class="slot"><h2>c &middot; After a chkobba</h2><div class="tools"><button id="c-replay">Replay</button></div><div class="phone" id="f-chk"></div></div>
+</div>
+
+<div class="notes">
+  <div class="note"><h3>Rules</h3><ul>
+    <li><b>Fixed set only.</b> Six emoji and six phrases at launch. No free text, so no chat moderation or report flow is needed yet.</li>
+    <li><b>Quick row = last used.</b> The four most recently sent emotes, newest first, saved on the device. It starts as 👍 😂 Yalla! 🤦. It reorders when the cooldown ends, never under your finger.</li>
+    <li><b>Cooldown.</b> One emote every 3 seconds per player. The server enforces it too (it drops extras), so a modified client can't spam.</li>
+    <li><b>Mute.</b> Tap a seat → <i>Mute emotes</i>. It's per player and only on your device; their bubbles stop showing. "Mute all" lives in Settings.</li>
+    <li><b>Bots emote</b> sometimes: "Mabrouk!" when their side sweeps, 🔥 after a big capture, 🤦 when they lose a 7♦. This makes offline games feel alive.</li>
+    <li><b>Phrases are translated.</b> Each emote is an id like <code>yalla</code>. Every player sees it in their own language (يلّا in Derja, "Yalla!" in English).</li>
+  </ul></div>
+  <div class="note"><h3>How it would be built</h3><ul>
+    <li><b>Protocol (additive):</b> client → server <code>EMOTE {id}</code>; server → clients <code>EMOTE_SHOWN {seat, id}</code>. It's a separate message, not part of the snapshot, so the snapshot fingerprint is unchanged.</li>
+    <li><b>Server:</b> checks the id is in the allowed list and the sender holds a seat, applies the per-seat 3 s limit, then broadcasts.</li>
+    <li><b>Client:</b> a <code>GameClient.sendEmote(id)</code> method plus an <code>emotes</code> event stream. <code>LocalGameClient</code> generates bot emotes. One shared <code>EmoteBubble</code> component reads the skin tokens, with no per-skin layout.</li>
+    <li><b>Accessibility:</b> each bubble is announced ("Karim: Yalla!"). Under reduce-motion it fades instead of popping.</li>
+  </ul></div>
+  <div class="note"><h3>Later</h3><ul>
+    <li><b>Emote packs</b> as cosmetics (shown locked in frame b), unlocked by playing or in the shop. The ownership record would be shared with avatars and frames.</li>
+    <li><b>Desktop:</b> press <kbd>E</kbd> to open the picker, then <kbd>1</kbd>–<kbd>9</kbd> to send.</li>
+    <li><b>Open question:</b> should partners get a few private "signals" (e.g. "I have the 7♦")? That changes the game, and many Tunisian tables would call it cheating, so it's left out.</li>
+  </ul></div>
+</div>
+
+<script>
+const D = window.ChkobbaDecks;
+const SKINS = [['cafe','Café'],['minimal','Minimal'],['sahara','Sahara'],['sidi','Sidi Bou Said'],['neon','Neon Souk']];
+const EMOJI = [['thumbs','👍'],['laugh','😂'],['facepalm','🤦'],['fire','🔥'],['wow','😮'],['pray','🙏']];
+const PHRASES = {
+  yalla:{en:'Yalla!',aeb:'يلّا!'}, sahha:{en:'Sa77a!',aeb:'صحّة!'}, mabrouk:{en:'Mabrouk!',aeb:'مبروك!'},
+  bravo:{en:'Bravo!',aeb:'براڤو!'}, khsara:{en:'Ya khsara…',aeb:'يا خسارة…'}, chwaya:{en:'Chwaya chwaya',aeb:'شويّة شويّة'},
+};
+const LOCKED = [['heart','❤️'],['cool','😎'],['crown','👑'],['tea','🍵']];
+// Quick row: the four most recently used emotes, newest first (defaults until the player has used four).
+const DEFAULT_QUICK = ['thumbs','laugh','yalla','facepalm'];
+let QUICK = (() => { try { const q = JSON.parse(localStorage.getItem('chkobba.recentEmotes')); if (Array.isArray(q) && q.length === 4) return q; } catch (e) {} return DEFAULT_QUICK.slice(); })();
+function remember(id){
+  QUICK = [id].concat(QUICK.filter(x => x !== id)).slice(0, 4);
+  try { localStorage.setItem('chkobba.recentEmotes', JSON.stringify(QUICK)); } catch (e) {}
+}
+function refreshQuick(){ document.querySelectorAll('.quick').forEach(q => { q.outerHTML = quickHTML(); }); }
+const ST = { skin:'sidi', tray:'quick', lang:'en', chatty:true, muted:{}, cooling:false };
+const SEATS = { top:{n:'Amira',i:'A',team:'us'}, left:{n:'Karim',i:'K',team:'them'}, right:{n:'Hédi',i:'H',team:'them'} };
+
+const card = (r,s,w=46) => D.face({rank:r,suit:s},'classic',w);
+const label = id => { const e = EMOJI.find(x=>x[0]===id); return e ? {em:e[1]} : {ph:PHRASES[id][ST.lang]}; };
+const tc = team => `var(--${team})`;
+
+function seatHTML(pos){
+  const p = SEATS[pos];
+  return `<div class="seat ${pos}"><button class="av" style="--tc:${tc(p.team)}" data-seat="${pos}" aria-label="${p.n}, options">${p.i}${ST.muted[pos]?'<span class="mute">🔇</span>':''}</button><span class="nm">${p.n}</span></div>`;
+}
+function quickHTML(){
+  if (ST.tray === 'smile') return `<div class="quick"><button class="smile" data-open aria-label="Emotes">😊</button></div>`;
+  const b = QUICK.map(id => { const l = label(id); return l.em ? `<button class="qb" data-emote="${id}" aria-label="Send ${id}">${l.em}</button>` : `<button class="qb ph" data-emote="${id}" dir="auto">${l.ph}</button>`; }).join('');
+  return `<div class="quick ${ST.cooling?'cool':''}">${b}<button class="qb" data-open aria-label="More emotes">＋</button><span class="cd"><i></i></span></div>`;
+}
+function trayHTML(){
+  const em = EMOJI.map(([id,e]) => `<button class="ge" data-emote="${id}" aria-label="Send ${id}">${e}</button>`).join('');
+  const ph = Object.keys(PHRASES).map(id => `<button class="ge ${ST.lang==='aeb'?'ar':''}" data-emote="${id}" dir="auto">${PHRASES[id][ST.lang]}</button>`).join('');
+  const lk = LOCKED.map(([id,e]) => `<button class="ge lock" data-locked="${id}" aria-label="${id}, locked">${e}</button>`).join('');
+  return `<div class="tray"><h4>Emotes<small>${ST.lang==='aeb'?'الكل يشوفها':'Everyone at the table sees them'}</small><button data-close aria-label="Close">✕</button></h4>
+    <div class="grid">${em}</div><div class="grid ph">${ph}</div>
+    <div class="grid" style="margin-top:8px">${lk}<span></span><span></span></div>
+    <div class="pack">Locked: the Café pack. Win 5 games to unlock it.</div></div>`;
+}
+function screen(opts = {}){
+  const table = [['A','H'],['3','S'],['5','C'],['K','D'],['7','D']].map(([r,s]) => card(r,s,44)).join('');
+  return `<div class="status"></div>
+    <div class="score"><span class="u">US 11</span><span class="t">THEM 8</span></div>
+    <div class="region"><div class="felt"></div>
+      ${seatHTML('top')}${seatHTML('left')}${seatHTML('right')}
+      <div class="tbl">${opts.empty ? '' : table}</div>
+    </div>
+    <div class="me"><div class="av" style="--tc:var(--us)">Y</div><span class="st">${ST.lang==='aeb'?'دورك':'Your turn'}</span>${quickHTML()}</div>
+    <div class="hand">${card('J','S',72)}${card('6','C',72)}${card('2','H',72)}</div>
+    ${opts.tray ? trayHTML() : ''}<div class="toast"></div>`;
+}
+
+const frames = { live:{}, pick:{tray:true}, chk:{empty:true} };
+function mount(){
+  document.querySelectorAll('.phone').forEach(ph => { ph.className = 'phone t-' + ST.skin; });
+  for (const k in frames) document.getElementById('f-' + k).innerHTML = screen(frames[k]);
+}
+
+function bubble(frame, from, id){
+  if (from !== 'me' && ST.muted[from]) return;
+  const ph = document.getElementById('f-' + frame);
+  const l = label(id);
+  const el = document.createElement('div');
+  el.className = `bub from-${from} ${ST.lang==='aeb'?'ar':''}`;
+  el.setAttribute('role','status');
+  el.innerHTML = l.em ? `<span class="em">${l.em}</span>` : `<span class="ph" dir="auto">${l.ph}</span>`;
+  ph.querySelector(from === 'me' ? '.me' : '.region').appendChild(el);
+  setTimeout(() => el.remove(), 2700);
+}
+function toast(frame, msg){
+  const t = document.getElementById('f-' + frame).querySelector('.toast');
+  t.textContent = msg; t.classList.add('show'); clearTimeout(t._h); t._h = setTimeout(() => t.classList.remove('show'), 1600);
+}
+function send(frame, id){
+  if (ST.cooling) return;
+  const ph = document.getElementById('f-' + frame);
+  ph.querySelector('.tray')?.remove();
+  bubble(frame, 'me', id);
+  ST.cooling = true; ph.querySelector('.quick')?.classList.add('cool');
+  remember(id);
+  // Reorder only once the cooldown ends, so buttons never move under the player's finger.
+  setTimeout(() => { ST.cooling = false; refreshQuick(); }, 3000);
+  if (ST.chatty && frame === 'live') {
+    const replies = { yalla:['laugh','khsara'], thumbs:['bravo','thumbs'], laugh:['laugh','facepalm'], facepalm:['laugh','chwaya'] };
+    const pick = (replies[id] || ['thumbs','yalla'])[Math.random() < .5 ? 0 : 1];
+    const who = ['top','left','right'][Math.floor(Math.random()*3)];
+    setTimeout(() => bubble(frame, who, pick), 900 + Math.random()*700);
+  }
+}
+function menu(frame, pos, anchor){
+  const ph = document.getElementById('f-' + frame);
+  ph.querySelector('.menu')?.remove();
+  const p = SEATS[pos], m = document.createElement('div');
+  m.className = 'menu';
+  const r = anchor.getBoundingClientRect(), pr = ph.getBoundingClientRect();
+  m.style.left = Math.min(pr.width - 196, Math.max(8, r.left - pr.left - 60)) + 'px';
+  m.style.top = (r.bottom - pr.top + 8) + 'px';
+  m.innerHTML = `<div class="who">${p.n}</div><button data-mute="${pos}">${ST.muted[pos] ? '🔊 Unmute emotes' : '🔇 Mute emotes'}</button><button data-close-menu>View profile</button>`;
+  ph.appendChild(m);
+}
+
+document.addEventListener('click', e => {
+  const ph = e.target.closest('.phone'); if (!ph) return;
+  const frame = ph.id.slice(2), t = e.target;
+  if (!t.closest('.menu') && !t.closest('[data-seat]')) ph.querySelector('.menu')?.remove();
+  const em = t.closest('[data-emote]'); if (em) return send(frame, em.dataset.emote);
+  if (t.closest('[data-open]')) { if (!ph.querySelector('.tray')) ph.insertAdjacentHTML('beforeend', trayHTML()); return; }
+  if (t.closest('[data-close]')) { if (frame !== 'pick') ph.querySelector('.tray')?.remove(); return; }
+  if (t.closest('[data-locked]')) return toast(frame, 'Locked: win 5 games to unlock');
+  const seat = t.closest('[data-seat]'); if (seat) return menu(frame, seat.dataset.seat, seat);
+  const mu = t.closest('[data-mute]');
+  if (mu) { const pos = mu.dataset.mute; ST.muted[pos] = !ST.muted[pos]; ph.querySelector('.menu')?.remove();
+    document.querySelectorAll(`[data-seat="${pos}"]`).forEach(a => { a.querySelector('.mute')?.remove(); if (ST.muted[pos]) a.insertAdjacentHTML('beforeend','<span class="mute">🔇</span>'); });
+    return toast(frame, ST.muted[pos] ? `${SEATS[pos].n}'s emotes muted` : `${SEATS[pos].n} unmuted`); }
+  if (t.closest('[data-close-menu]')) ph.querySelector('.menu')?.remove();
+});
+
+function seg(id, key, values){
+  const el = document.getElementById(id);
+  if (values) el.innerHTML = values.map(([v,l]) => `<button data-v="${v}" class="${ST[key]===v?'on':''}">${l}</button>`).join('');
+  el.addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return;
+    ST[key] = b.dataset.v; el.querySelectorAll('button').forEach(x => x.classList.toggle('on', x === b)); mount(); playChk(); });
+}
+seg('skin','skin',SKINS); seg('tray','tray'); seg('lang','lang');
+document.getElementById('a-bots').addEventListener('click', e => { ST.chatty = !ST.chatty; e.target.textContent = 'Bots: ' + (ST.chatty ? 'chatty' : 'quiet'); });
+
+function playChk(){
+  bubble('chk','left','mabrouk');
+  setTimeout(() => bubble('chk','right','fire'), 500);
+  setTimeout(() => bubble('chk','top','facepalm'), 1100);
+}
+document.getElementById('c-replay').addEventListener('click', playChk);
+mount(); playChk();
+</script>
+</body>
+</html>

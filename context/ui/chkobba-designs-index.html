@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Chkobba Online - Visual direction proposals</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',sans-serif;background:#F4F3EF;color:#1b1f26;line-height:1.5;padding:40px 20px 80px}
+.wrap{max-width:1100px;margin:0 auto}
+h1{font-size:32px;font-weight:800;letter-spacing:-.02em}
+.lead{margin-top:8px;max-width:760px;color:#4a525e;font-size:15px}
+.dir{margin-top:40px;background:#fff;border:1px solid #dcdad2;border-radius:20px;overflow:hidden}
+.dir header{display:flex;flex-wrap:wrap;align-items:center;gap:12px;padding:20px 24px 0}
+.dir .num{width:36px;height:36px;border-radius:50%;background:#1b1f26;color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center}
+.dir h2{font-size:22px;font-weight:800;letter-spacing:-.01em}
+.dir .tag{font-size:13px;color:#6b7380}
+.dir .open{margin-left:auto;text-decoration:none;font-weight:700;font-size:14px;background:#1b1f26;color:#fff;padding:9px 18px;border-radius:999px}
+.dir .open:hover{background:#333b48}
+.preview{position:relative;margin:16px 24px 0;border-radius:14px;overflow:hidden;border:1px solid #e4e2da;background:#eee}
+.preview iframe{border:0;width:1760px;height:1010px;transform-origin:0 0;pointer-events:none;background:#fff}
+.preview a.cover{position:absolute;inset:0}
+.cols{display:grid;grid-template-columns:2fr 1fr 1fr;gap:20px;padding:20px 24px 24px}
+.cols h3{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#6b7380;margin-bottom:6px}
+.cols p,.cols li{font-size:14px;color:#2b323c}
+.cols ul{padding-left:18px}
+.cols li{margin-bottom:4px}
+.good h3{color:#1c7c4f}.bad h3{color:#b3392c}
+table{width:100%;border-collapse:collapse;margin-top:16px;background:#fff;border:1px solid #dcdad2;border-radius:16px;overflow:hidden;font-size:14px}
+th,td{padding:10px 14px;text-align:left;border-bottom:1px solid #eceae3;vertical-align:top}
+th{background:#faf9f6;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#6b7380}
+tr:last-child td{border-bottom:none}
+td:first-child{font-weight:700;white-space:nowrap}
+.rec{margin-top:40px;background:#1b1f26;color:#e8ebf0;border-radius:20px;padding:24px}
+.rec h2{font-size:20px;margin-bottom:8px;color:#fff}
+.rec p{font-size:14px;color:#c5ccd8;max-width:820px}
+h2.sec{margin-top:40px;font-size:20px;font-weight:800}
+@media(max-width:800px){.cols{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Chkobba Online &middot; three visual directions</h1>
+  <p class="lead">Three clearly different looks for the same screens: home, your turn with a capture choice, a bot's turn with a CHKOBBA sweep, and the round summary (plus game-over). All three share the same sample game state and the same capture logic, so they can be compared like for like. Each prototype is interactive: tap hand cards, preview and confirm captures, switch the summary between round-done and game-over.</p>
+
+  <section class="dir">
+    <header><span class="num">1</span><h2>Café Tunisien</h2><span class="tag">warm &middot; traditional &middot; bilingual</span><a class="open" href="chkobba-design-1-cafe.html">Open prototype &rarr;</a></header>
+    <div class="preview" data-src="chkobba-design-1-cafe.html"><iframe src="chkobba-design-1-cafe.html" title="Café Tunisien preview" loading="lazy"></iframe><a class="cover" href="chkobba-design-1-cafe.html" aria-label="Open Café Tunisien"></a></div>
+    <div class="cols">
+      <div><h3>Rationale</h3><p>A game at a Tunis café: wooden table rim, green baize, cream cards with real pips and illustrated face cards (Ray crowned, Moujira with a jasmine band, Kawel in a chechia), brass nameplates, and a paper racham with a hand-drawn tally for the score. Arabic terms (شكبّة, كارطة, ديناري, برميلة, سبعة الحيّة) sit next to the Latin ones, so the game's own vocabulary becomes part of the look. The CHKOBBA moment is a rubber stamp with confetti.</p></div>
+      <div class="good"><h3>Strengths</h3><ul><li>Strongest cultural authenticity and warmth</li><li>Classic pips make suit-counting (Dineri) natural</li><li>Racham tally is a memorable score display</li></ul></div>
+      <div class="bad"><h3>Risks</h3><ul><li>Highest art and polish cost</li><li>Small pips at 46px table size; relies on large indices</li><li>Can read dated or "skin-like" to younger players</li></ul></div>
+    </div>
+  </section>
+
+  <section class="dir">
+    <header><span class="num">2</span><h2>Sidi Bou Said</h2><span class="tag">bright &middot; brand identity &middot; friendly</span><a class="open" href="chkobba-design-2-sidi-bou-said.html">Open prototype &rarr;</a></header>
+    <div class="preview" data-src="chkobba-design-2-sidi-bou-said.html"><iframe src="chkobba-design-2-sidi-bou-said.html" title="Sidi Bou Said preview" loading="lazy"></iframe><a class="cover" href="chkobba-design-2-sidi-bou-said.html" aria-label="Open Sidi Bou Said"></a></div>
+    <div class="cols">
+      <div><h3>Rationale</h3><p>Tunisian blue and white with a zellige star pattern, an arched table shaped like the village's blue doors, and round avatars with team-coloured rings (blue for us, orange for them). Cards are rounded and modern with chunky indices and emblem face cards (crown, jasmine, chechia). Buttons have a solid "press" depth that is cheap to build in React Native. The result is light, friendly and instantly recognisable in an app-store grid, and it gives the brand a mascot-able world (the door, the cat on the wall, jasmine).</p></div>
+      <div class="good"><h3>Strengths</h3><ul><li>Most distinctive and ownable; great store presence</li><li>Team colours make 2v2 readable at a glance</li><li>Strong turn callout and colour-coded capture options</li></ul></div>
+      <div class="bad"><h3>Risks</h3><ul><li>Light UI is harsh in dark rooms and on OLED battery</li><li>Arched board costs vertical space for 10 table cards</li><li>Motifs need respectful, commissioned illustration</li></ul></div>
+    </div>
+  </section>
+
+  <section class="dir">
+    <header><span class="num">3</span><h2>Modern Minimal</h2><span class="tag">dark &middot; flat &middot; one-handed</span><a class="open" href="chkobba-design-3-minimal.html">Open prototype &rarr;</a></header>
+    <div class="preview" data-src="chkobba-design-3-minimal.html"><iframe src="chkobba-design-3-minimal.html" title="Modern Minimal preview" loading="lazy"></iframe><a class="cover" href="chkobba-design-3-minimal.html" aria-label="Open Modern Minimal"></a></div>
+    <div class="cols">
+      <div><h3>Rationale</h3><p>Optimised for the way the game is actually played: one thumb, often in short sessions. Everything that needs a tap lives in the bottom third: a fanned hand and a capture bottom sheet with 56px option rows. Oversized card indices stay readable at any size, a draining timer ring marks whose turn it is, and compact score chips keep captured-pile counts and sweep counts visible all the time. The CHKOBBA celebration is a single fast slam rather than a full-screen animation.</p></div>
+      <div class="good"><h3>Strengths</h3><ul><li>Best usability, legibility and contrast</li><li>Cheapest to build and easiest to theme or localise</li><li>Timer ring doubles as a future turn-timeout UI</li></ul></div>
+      <div class="bad"><h3>Risks</h3><ul><li>Least ownable; nothing says Tunisia</li><li>No pips, so no visual suit counting</li><li>Sheet hides the fan while choosing a capture</li></ul></div>
+    </div>
+  </section>
+
+  <h2 class="sec">New direction (October 2026)</h2>
+  <p class="lead">One more look built on a shared kit (<code>chkobba-proto-kit.js</code>), so it uses the same sample game and capture logic as the ones above. It has a deck menu and an in-app deck picker on its home screen, and works with all 13 decks in the <a href="chkobba-decks.html">deck gallery</a> (five of them new).</p>
+
+  <section class="dir">
+    <header><span class="num">6</span><h2>Sahara Night</h2><span class="tag">dark &middot; calm &middot; atmospheric</span><a class="open" href="chkobba-design-6-sahara-night.html">Open prototype &rarr;</a></header>
+    <div class="preview" data-src="chkobba-design-6-sahara-night.html"><iframe src="chkobba-design-6-sahara-night.html" title="Sahara Night preview" loading="lazy"></iframe><a class="cover" href="chkobba-design-6-sahara-night.html" aria-label="Open Sahara Night"></a></div>
+    <div class="cols">
+      <div><h3>Rationale</h3><p>A game on a woven mat in the desert after sunset. Seats are lantern medallions whose gold ring burns down as the turn clock. The score is a caravan walking a 21-step track to an oasis, so you can see at a glance who is closer to winning. Capture options are numbered stars. A CHKOBBA is a shooting star, and then شكبّة is written out in gold strokes.</p></div>
+      <div class="good"><h3>Strengths</h3><ul><li>Most beautiful dark theme; suits OLED and night play</li><li>The caravan track shows how close each team is to 21, not just the score</li><li>Calm pacing fits long casual sessions</li></ul></div>
+      <div class="bad"><h3>Risks</h3><ul><li>Round mat holds fewer table cards than a rectangle</li><li>Less energy than Neon Souk for competitive players</li></ul></div>
+    </div>
+  </section>
+
+  <h2 class="sec">At a glance</h2>
+  <table>
+    <thead><tr><th></th><th>1 &middot; Café Tunisien</th><th>2 &middot; Sidi Bou Said</th><th>3 &middot; Modern Minimal</th></tr></thead>
+    <tbody>
+      <tr><td>Mood</td><td>Warm, nostalgic, tactile</td><td>Bright, playful, local</td><td>Sharp, calm, competitive</td></tr>
+      <tr><td>Theme</td><td>Dark wood + green baize</td><td>Light blue/white</td><td>Near-black</td></tr>
+      <tr><td>Turn indicator</td><td>Glowing medallion + lit brass plate</td><td>Grown avatar, halo, yellow callout</td><td>Draining timer ring</td></tr>
+      <tr><td>Capture choice</td><td>Brass plaques above the hand</td><td>Chunky colour-coded buttons</td><td>Bottom sheet with hand chips</td></tr>
+      <tr><td>Score display</td><td>Paper racham with tally marks</td><td>Two team cards with progress bars</td><td>Compact chips with pile and sweep counts</td></tr>
+      <tr><td>Card face</td><td>Classic pips + illustrated faces</td><td>One big pip + emblem faces</td><td>Oversized index only</td></tr>
+      <tr><td>CHKOBBA moment</td><td>Rubber stamp + confetti</td><td>Starburst ribbon + petals</td><td>Slam text + rays</td></tr>
+      <tr><td>Build cost</td><td>High</td><td>Medium</td><td>Low</td></tr>
+      <tr><td>Best for</td><td>Authenticity and community feel</td><td>Store presence and brand</td><td>Usability and long-term play</td></tr>
+    </tbody>
+  </table>
+
+  <section class="rec">
+    <h2>Suggested path</h2>
+    <p>These are not mutually exclusive at the interaction level. My suggestion is to take <b>Direction 2</b> as the brand and visual identity (it is the one a stranger would remember), and borrow two interaction ideas from Direction 3: the <b>capture bottom sheet in the thumb zone</b> (or at least 56px option rows above the hand) and the <b>timer ring</b> on the active seat. From Direction 1, keep the <b>Arabic vocabulary</b> in the summary and the <b>racham-style tally</b> as an optional score view. Add a dark theme to Direction 2 early, since the light palette is its biggest practical risk. The numbered capture badges (option 1/2 linked to table cards) work in all three and are the single most useful UX change over the current build.</p>
+  </section>
+</div>
+
+<script>
+function fit(){
+  document.querySelectorAll('.preview').forEach(p=>{
+    const f=p.querySelector('iframe'),s=p.clientWidth/1760;
+    f.style.transform='scale('+s+')';
+    p.style.height=(1010*s)+'px';
+  });
+}
+window.addEventListener('resize',fit);window.addEventListener('load',fit);fit();
+</script>
+</body>
+</html>

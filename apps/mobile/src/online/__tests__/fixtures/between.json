@@ -1,0 +1,1119 @@
+{
+  "seat": 0,
+  "phase": "between",
+  "view": {
+    "seat": 0,
+    "playerCount": 4,
+    "rules": {
+      "faceValues": "Q8_J9_K10",
+      "captureObligation": "playedCardMustCapture",
+      "rankPriority": true,
+      "cutCardChoice": true,
+      "initialRedeal": "threeOrMoreSameRank",
+      "lastCardChkobba": false,
+      "targetScore": 21,
+      "winByTwo": false,
+      "instantWinAllDineri": false
+    },
+    "phase": "roundOver",
+    "round": 1,
+    "deal": 3,
+    "dealer": 0,
+    "turn": 0,
+    "hand": [],
+    "handCounts": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "table": [],
+    "stockCount": 0,
+    "cut": null,
+    "pileCounts": [
+      25,
+      15
+    ],
+    "piles": [
+      [
+        {
+          "id": "KD",
+          "rank": "K",
+          "suit": "D"
+        },
+        {
+          "id": "6S",
+          "rank": "6",
+          "suit": "S"
+        },
+        {
+          "id": "4H",
+          "rank": "4",
+          "suit": "H"
+        },
+        {
+          "id": "7C",
+          "rank": "7",
+          "suit": "C"
+        },
+        {
+          "id": "4S",
+          "rank": "4",
+          "suit": "S"
+        },
+        {
+          "id": "3D",
+          "rank": "3",
+          "suit": "D"
+        },
+        {
+          "id": "KS",
+          "rank": "K",
+          "suit": "S"
+        },
+        {
+          "id": "JH",
+          "rank": "J",
+          "suit": "H"
+        },
+        {
+          "id": "AD",
+          "rank": "A",
+          "suit": "D"
+        },
+        {
+          "id": "QD",
+          "rank": "Q",
+          "suit": "D"
+        },
+        {
+          "id": "QH",
+          "rank": "Q",
+          "suit": "H"
+        },
+        {
+          "id": "3H",
+          "rank": "3",
+          "suit": "H"
+        },
+        {
+          "id": "AH",
+          "rank": "A",
+          "suit": "H"
+        },
+        {
+          "id": "2H",
+          "rank": "2",
+          "suit": "H"
+        },
+        {
+          "id": "7D",
+          "rank": "7",
+          "suit": "D"
+        },
+        {
+          "id": "AC",
+          "rank": "A",
+          "suit": "C"
+        },
+        {
+          "id": "6D",
+          "rank": "6",
+          "suit": "D"
+        },
+        {
+          "id": "2D",
+          "rank": "2",
+          "suit": "D"
+        },
+        {
+          "id": "2S",
+          "rank": "2",
+          "suit": "S"
+        },
+        {
+          "id": "KC",
+          "rank": "K",
+          "suit": "C"
+        },
+        {
+          "id": "JC",
+          "rank": "J",
+          "suit": "C"
+        },
+        {
+          "id": "AS",
+          "rank": "A",
+          "suit": "S"
+        },
+        {
+          "id": "7S",
+          "rank": "7",
+          "suit": "S"
+        },
+        {
+          "id": "5C",
+          "rank": "5",
+          "suit": "C"
+        },
+        {
+          "id": "KH",
+          "rank": "K",
+          "suit": "H"
+        }
+      ],
+      [
+        {
+          "id": "4D",
+          "rank": "4",
+          "suit": "D"
+        },
+        {
+          "id": "4C",
+          "rank": "4",
+          "suit": "C"
+        },
+        {
+          "id": "7H",
+          "rank": "7",
+          "suit": "H"
+        },
+        {
+          "id": "2C",
+          "rank": "2",
+          "suit": "C"
+        },
+        {
+          "id": "5S",
+          "rank": "5",
+          "suit": "S"
+        },
+        {
+          "id": "QC",
+          "rank": "Q",
+          "suit": "C"
+        },
+        {
+          "id": "QS",
+          "rank": "Q",
+          "suit": "S"
+        },
+        {
+          "id": "6C",
+          "rank": "6",
+          "suit": "C"
+        },
+        {
+          "id": "6H",
+          "rank": "6",
+          "suit": "H"
+        },
+        {
+          "id": "5D",
+          "rank": "5",
+          "suit": "D"
+        },
+        {
+          "id": "5H",
+          "rank": "5",
+          "suit": "H"
+        },
+        {
+          "id": "JD",
+          "rank": "J",
+          "suit": "D"
+        },
+        {
+          "id": "JS",
+          "rank": "J",
+          "suit": "S"
+        },
+        {
+          "id": "3S",
+          "rank": "3",
+          "suit": "S"
+        },
+        {
+          "id": "3C",
+          "rank": "3",
+          "suit": "C"
+        }
+      ]
+    ],
+    "lastCapturer": 2,
+    "chkobbas": [
+      0,
+      1
+    ],
+    "scores": [
+      4,
+      1
+    ],
+    "lastRound": {
+      "round": 1,
+      "teams": [
+        {
+          "cards": 25,
+          "dineri": 7,
+          "sevens": 3,
+          "sixes": 2,
+          "hasHaya": true,
+          "chkobbas": 0,
+          "points": {
+            "karta": 1,
+            "dineri": 1,
+            "bermila": 1,
+            "haya": 1,
+            "chkobba": 0
+          },
+          "total": 4
+        },
+        {
+          "cards": 15,
+          "dineri": 3,
+          "sevens": 1,
+          "sixes": 2,
+          "hasHaya": false,
+          "chkobbas": 1,
+          "points": {
+            "karta": 0,
+            "dineri": 0,
+            "bermila": 0,
+            "haya": 0,
+            "chkobba": 1
+          },
+          "total": 1
+        }
+      ],
+      "allDineri": null
+    },
+    "winner": null,
+    "legalMoves": []
+  },
+  "players": [
+    {
+      "name": "Player 1",
+      "isBot": false,
+      "away": true,
+      "connected": true
+    },
+    {
+      "name": "Sonia",
+      "isBot": true,
+      "away": false,
+      "connected": true
+    },
+    {
+      "name": "Mongi",
+      "isBot": true,
+      "away": false,
+      "connected": true
+    },
+    {
+      "name": "Fatma",
+      "isBot": true,
+      "away": false,
+      "connected": true
+    }
+  ],
+  "log": [
+    {
+      "seq": 1,
+      "event": {
+        "type": "dealerDrawn",
+        "draws": [
+          [
+            {
+              "seat": 0,
+              "card": {
+                "id": "3H",
+                "rank": "3",
+                "suit": "H"
+              }
+            },
+            {
+              "seat": 1,
+              "card": {
+                "id": "5S",
+                "rank": "5",
+                "suit": "S"
+              }
+            },
+            {
+              "seat": 2,
+              "card": {
+                "id": "KC",
+                "rank": "K",
+                "suit": "C"
+              }
+            },
+            {
+              "seat": 3,
+              "card": {
+                "id": "QC",
+                "rank": "Q",
+                "suit": "C"
+              }
+            }
+          ]
+        ],
+        "dealer": 0
+      }
+    },
+    {
+      "seq": 2,
+      "event": {
+        "type": "roundStarted",
+        "round": 1,
+        "dealer": 0,
+        "redeals": 0
+      }
+    },
+    {
+      "seq": 3,
+      "event": {
+        "type": "cutOffered",
+        "round": 1,
+        "seat": 1
+      }
+    },
+    {
+      "seq": 4,
+      "event": {
+        "type": "cutResolved",
+        "seat": 1,
+        "kept": true,
+        "card": null
+      }
+    },
+    {
+      "seq": 5,
+      "event": {
+        "type": "handsDealt",
+        "round": 1,
+        "deal": 1
+      }
+    },
+    {
+      "seq": 6,
+      "event": {
+        "type": "cardPlayed",
+        "seat": 1,
+        "card": {
+          "id": "JH",
+          "rank": "J",
+          "suit": "H"
+        },
+        "captured": [],
+        "chkobba": false
+      }
+    },
+    {
+      "seq": 7,
+      "event": {
+        "type": "cardPlayed",
+        "seat": 2,
+        "card": {
+          "id": "KD",
+          "rank": "K",
+          "suit": "D"
+        },
+        "captured": [
+          {
+            "id": "6S",
+            "rank": "6",
+            "suit": "S"
+          },
+          {
+            "id": "4H",
+            "rank": "4",
+            "suit": "H"
+          }
+        ],
+        "chkobba": false
+      }
+    },
+    {
+      "seq": 8,
+      "event": {
+        "type": "cardPlayed",
+        "seat": 3,
+        "card": {
+          "id": "4D",
+          "rank": "4",
+          "suit": "D"
+        },
+        "captured": [
+          {
+            "id": "4C",
+            "rank": "4",
+            "suit": "C"
+          }
+        ],
+        "chkobba": false
+      }
+    },
+    {
+      "seq": 9,
+      "event": {
+        "type": "cardPlayed",
+        "seat": 0,
+        "card": {
+          "id": "5S",
+          "rank": "5",
+          "suit": "S"
+        },
+        "captured": [],
+        "chkobba": false
+      }
+    },
+    {
+      "seq": 10,
+      "event": {
+        "type": "cardPlayed",
+        "seat": 1,
+        "card": {
+          "id": "QS",
+          "rank": "Q",
+          "suit": "S"
+        },
+        "captured": [],
+        "chkobba": false
+      }
+    },
+    {
+      "seq": 11,
+      "event": {
+        "type": "cardPlayed",
+        "seat": 2,
+        "card": {
+          "id": "4S",
+          "rank": "4",
+          "suit": "S"
+        },
+        "captured": [],
+        "chkobba": false
+      }
+    },
+    {
+      "seq": 12,
+      "event": {
+        "type": "cardPlayed",
+        "seat": 3,
+        "card": {
+          "id": "7H",
+          "rank": "7",
+          "suit": "H"
+        },
+        "captured": [
+          {
+            "id": "2C",
+            "rank": "2",
+            "suit": "C"
+          },
+          {
+            "id": "5S",
+            "rank": "5",
+            "suit": "S"
+          }
+        ],
+        "chkobba": false
+      }
+    },
+    {
+      "seq": 13,
+      "event": {
+        "type": "cardPlayed",
+        "seat": 0,
+        "card": {
+          "id": "5H",
+          "rank": "5",
+          "suit": "H"
+        },
+        "captured": [],
+        "chkobba": false
+      }
+    },
+    {
+      "seq": 14,
+      "event": {
+        "type": "cardPlayed",
+        "seat": 1,
+        "card": {
+          "id": "6H",
+          "rank": "6",
+          "suit": "H"
+        },
+        "captured": [],
+        "chkobba": false
+      }
+    },
+    {
+      "seq": 15,
+      "event": {
+        "type": "cardPlayed",
+        "seat": 2,
+        "card": {
+          "id": "AD",
+          "rank": "A",
+          "suit": "D"
+        },
+        "captured": [],
+        "chkobba": false
+      }
+    },
+    {
+      "seq": 16,
+      "event": {
+        "type": "cardPlayed",
+        "seat": 3,
+        "card": {
+          "id": "QC",
+          "rank": "Q",
+          "suit": "C"
+        },
+        "captured": [
+          {
+            "id": "QS",
+            "rank": "Q",
+            "suit": "S"
+          }
+        ],
+        "chkobba": false
+      }
+    },
+    {
+      "seq": 17,
+      "event": {
+        "type": "cardPlayed",
+        "seat": 0,
+        "card": {
+          "id": "3D",
+          "rank": "3",
+          "suit": "D"
+        },
+        "captured": [],
+        "chkobba": false
+      }
+    },
+    {
+      "seq": 18,
+      "event": {
+        "type": "handsDealt",
+        "round": 1,
+        "deal": 2
+      }
+    },
+    {
+      "seq": 19,
+      "event": {
+        "type": "cardPlayed",
+        "seat": 1,
+        "card": {
+          "id": "6C",
+          "rank": "6",
+          "suit": "C"
+        },
+        "captured": [
+          {
+            "id": "6H",
+            "rank": "6",
+            "suit": "H"
+          }
+        ],
+        "chkobba": false
+      }
+    },
+    {
+      "seq": 20,
+      "event": {
+        "type": "cardPlayed",
+        "seat": 2,
+        "card": {
+          "id": "7C",
+          "rank": "7",
+          "suit": "C"
+        },
+        "captured": [
+          {
+            "id": "4S",
+            "rank": "4",
+            "suit": "S"
+          },
+          {
+            "id": "3D",
+            "rank": "3",
+            "suit": "D"
+          }
+        ],
+        "chkobba": false
+      }
+    },
+    {
+      "seq": 21,
+      "event": {
+        "type": "cardPlayed",
+        "seat": 3,
+        "card": {
+          "id": "QH",
+          "rank": "Q",
+          "suit": "H"
+        },
+        "captured": [],
+        "chkobba": false
+      }
+    },
+    {
+      "seq": 22,
+      "event": {
+        "type": "cardPlayed",
+        "seat": 0,
+        "card": {
+          "id": "KS",
+          "rank": "K",
+          "suit": "S"
+        },
+        "captured": [
+          {
+            "id": "JH",
+            "rank": "J",
+            "suit": "H"
+          },
+          {
+            "id": "AD",
+            "rank": "A",
+            "suit": "D"
+          }
+        ],
+        "chkobba": false
+      }
+    },
+    {
+      "seq": 23,
+      "event": {
+        "type": "cardPlayed",
+        "seat": 1,
+        "card": {
+          "id": "AH",
+          "rank": "A",
+          "suit": "H"
+        },
+        "captured": [],
+        "chkobba": false
+      }
+    },
+    {
+      "seq": 24,
+      "event": {
+        "type": "cardPlayed",
+        "seat": 2,
+        "card": {
+          "id": "2H",
+          "rank": "2",
+          "suit": "H"
+        },
+        "captured": [],
+        "chkobba": false
+      }
+    },
+    {
+      "seq": 25,
+      "event": {
+        "type": "cardPlayed",
+        "seat": 3,
+        "card": {
+          "id": "5D",
+          "rank": "5",
+          "suit": "D"
+        },
+        "captured": [
+          {
+            "id": "5H",
+            "rank": "5",
+            "suit": "H"
+          }
+        ],
+        "chkobba": false
+      }
+    },
+    {
+      "seq": 26,
+      "event": {
+        "type": "cardPlayed",
+        "seat": 0,
+        "card": {
+          "id": "QD",
+          "rank": "Q",
+          "suit": "D"
+        },
+        "captured": [
+          {
+            "id": "QH",
+            "rank": "Q",
+            "suit": "H"
+          }
+        ],
+        "chkobba": false
+      }
+    },
+    {
+      "seq": 27,
+      "event": {
+        "type": "cardPlayed",
+        "seat": 1,
+        "card": {
+          "id": "JS",
+          "rank": "J",
+          "suit": "S"
+        },
+        "captured": [],
+        "chkobba": false
+      }
+    },
+    {
+      "seq": 28,
+      "event": {
+        "type": "cardPlayed",
+        "seat": 2,
+        "card": {
+          "id": "3H",
+          "rank": "3",
+          "suit": "H"
+        },
+        "captured": [
+          {
+            "id": "AH",
+            "rank": "A",
+            "suit": "H"
+          },
+          {
+            "id": "2H",
+            "rank": "2",
+            "suit": "H"
+          }
+        ],
+        "chkobba": false
+      }
+    },
+    {
+      "seq": 29,
+      "event": {
+        "type": "cardPlayed",
+        "seat": 3,
+        "card": {
+          "id": "JD",
+          "rank": "J",
+          "suit": "D"
+        },
+        "captured": [
+          {
+            "id": "JS",
+            "rank": "J",
+            "suit": "S"
+          }
+        ],
+        "chkobba": true
+      }
+    },
+    {
+      "seq": 30,
+      "event": {
+        "type": "cardPlayed",
+        "seat": 0,
+        "card": {
+          "id": "2S",
+          "rank": "2",
+          "suit": "S"
+        },
+        "captured": [],
+        "chkobba": false
+      }
+    },
+    {
+      "seq": 31,
+      "event": {
+        "type": "handsDealt",
+        "round": 1,
+        "deal": 3
+      }
+    },
+    {
+      "seq": 32,
+      "event": {
+        "type": "cardPlayed",
+        "seat": 1,
+        "card": {
+          "id": "3C",
+          "rank": "3",
+          "suit": "C"
+        },
+        "captured": [],
+        "chkobba": false
+      }
+    },
+    {
+      "seq": 33,
+      "event": {
+        "type": "cardPlayed",
+        "seat": 2,
+        "card": {
+          "id": "JC",
+          "rank": "J",
+          "suit": "C"
+        },
+        "captured": [],
+        "chkobba": false
+      }
+    },
+    {
+      "seq": 34,
+      "event": {
+        "type": "cardPlayed",
+        "seat": 3,
+        "card": {
+          "id": "3S",
+          "rank": "3",
+          "suit": "S"
+        },
+        "captured": [
+          {
+            "id": "3C",
+            "rank": "3",
+            "suit": "C"
+          }
+        ],
+        "chkobba": false
+      }
+    },
+    {
+      "seq": 35,
+      "event": {
+        "type": "cardPlayed",
+        "seat": 0,
+        "card": {
+          "id": "AC",
+          "rank": "A",
+          "suit": "C"
+        },
+        "captured": [],
+        "chkobba": false
+      }
+    },
+    {
+      "seq": 36,
+      "event": {
+        "type": "cardPlayed",
+        "seat": 1,
+        "card": {
+          "id": "6D",
+          "rank": "6",
+          "suit": "D"
+        },
+        "captured": [],
+        "chkobba": false
+      }
+    },
+    {
+      "seq": 37,
+      "event": {
+        "type": "cardPlayed",
+        "seat": 2,
+        "card": {
+          "id": "7D",
+          "rank": "7",
+          "suit": "D"
+        },
+        "captured": [
+          {
+            "id": "AC",
+            "rank": "A",
+            "suit": "C"
+          },
+          {
+            "id": "6D",
+            "rank": "6",
+            "suit": "D"
+          }
+        ],
+        "chkobba": false
+      }
+    },
+    {
+      "seq": 38,
+      "event": {
+        "type": "cardPlayed",
+        "seat": 3,
+        "card": {
+          "id": "AS",
+          "rank": "A",
+          "suit": "S"
+        },
+        "captured": [],
+        "chkobba": false
+      }
+    },
+    {
+      "seq": 39,
+      "event": {
+        "type": "cardPlayed",
+        "seat": 0,
+        "card": {
+          "id": "2D",
+          "rank": "2",
+          "suit": "D"
+        },
+        "captured": [
+          {
+            "id": "2S",
+            "rank": "2",
+            "suit": "S"
+          }
+        ],
+        "chkobba": false
+      }
+    },
+    {
+      "seq": 40,
+      "event": {
+        "type": "cardPlayed",
+        "seat": 1,
+        "card": {
+          "id": "7S",
+          "rank": "7",
+          "suit": "S"
+        },
+        "captured": [],
+        "chkobba": false
+      }
+    },
+    {
+      "seq": 41,
+      "event": {
+        "type": "cardPlayed",
+        "seat": 2,
+        "card": {
+          "id": "KC",
+          "rank": "K",
+          "suit": "C"
+        },
+        "captured": [
+          {
+            "id": "JC",
+            "rank": "J",
+            "suit": "C"
+          },
+          {
+            "id": "AS",
+            "rank": "A",
+            "suit": "S"
+          }
+        ],
+        "chkobba": false
+      }
+    },
+    {
+      "seq": 42,
+      "event": {
+        "type": "cardPlayed",
+        "seat": 3,
+        "card": {
+          "id": "5C",
+          "rank": "5",
+          "suit": "C"
+        },
+        "captured": [],
+        "chkobba": false
+      }
+    },
+    {
+      "seq": 43,
+      "event": {
+        "type": "cardPlayed",
+        "seat": 0,
+        "card": {
+          "id": "KH",
+          "rank": "K",
+          "suit": "H"
+        },
+        "captured": [],
+        "chkobba": false
+      }
+    },
+    {
+      "seq": 44,
+      "event": {
+        "type": "tableCollected",
+        "team": 0,
+        "cards": [
+          {
+            "id": "7S",
+            "rank": "7",
+            "suit": "S"
+          },
+          {
+            "id": "5C",
+            "rank": "5",
+            "suit": "C"
+          },
+          {
+            "id": "KH",
+            "rank": "K",
+            "suit": "H"
+          }
+        ]
+      }
+    },
+    {
+      "seq": 45,
+      "event": {
+        "type": "roundEnded",
+        "result": {
+          "round": 1,
+          "teams": [
+            {
+              "cards": 25,
+              "dineri": 7,
+              "sevens": 3,
+              "sixes": 2,
+              "hasHaya": true,
+              "chkobbas": 0,
+              "points": {
+                "karta": 1,
+                "dineri": 1,
+                "bermila": 1,
+                "haya": 1,
+                "chkobba": 0
+              },
+              "total": 4
+            },
+            {
+              "cards": 15,
+              "dineri": 3,
+              "sevens": 1,
+              "sixes": 2,
+              "hasHaya": false,
+              "chkobbas": 1,
+              "points": {
+                "karta": 0,
+                "dineri": 0,
+                "bermila": 0,
+                "haya": 0,
+                "chkobba": 1
+              },
+              "total": 1
+            }
+          ],
+          "allDineri": null
+        },
+        "scores": [
+          4,
+          1
+        ]
+      }
+    }
+  ],
+  "turnDeadline": null,
+  "backfillAt": null,
+  "nextRoundAt": 1700000098000,
+  "serverTime": 1700000090100
+}

@@ -1,0 +1,10 @@
+# Local development config. Secrets here are Nakama's well-known defaults; never reuse them in a deployment.
+name: chkobba-local
+logger:
+  level: DEBUG
+runtime:
+  js_entrypoint: build/index.js
+socket:
+  server_key: defaultkey
+session:
+  token_expiry_sec: 86400

@@ -1,0 +1,40 @@
+# Build context is the monorepo root (see apps/server/Dockerfile).
+# Keep it small and free of local state, secrets and VCS history.
+
+# VCS and tooling
+.git
+.gitignore
+.claude
+.mcp.json
+.playwright-mcp
+
+# Dependencies and build outputs (rebuilt inside the image)
+**/node_modules
+**/build
+**/dist
+**/coverage
+**/*.tsbuildinfo
+**/*.log
+
+# Mobile app: only its package.json is needed (for the frozen lockfile)
+apps/mobile/.expo
+apps/mobile/web-build
+apps/mobile/ios
+apps/mobile/android
+apps/mobile/assets
+
+# Secrets and local env files
+**/.env
+**/.env*
+**/*.pem
+**/*.key
+**/*.p8
+**/*.p12
+**/*.jks
+
+# Docs and planning artifacts
+context
+*.md
+
+# OS noise
+**/.DS_Store

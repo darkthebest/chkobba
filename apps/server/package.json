@@ -1,0 +1,32 @@
+{
+  "name": "@chkobba/server",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Nakama TypeScript runtime module: authoritative Chkobba tables",
+  "type": "module",
+  "scripts": {
+    "build": "rollup -c",
+    "typecheck": "tsc -p tsconfig.json && tsc -p scripts/tsconfig.json",
+    "e2e": "tsx scripts/e2e.ts",
+    "lint": "tsc -p tsconfig.json",
+    "test": "vitest run --passWithNoTests"
+  },
+  "dependencies": {
+    "@chkobba/protocol": "workspace:*",
+    "@chkobba/rules": "workspace:*"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.29.7",
+    "@babel/preset-env": "^7.29.7",
+    "@babel/preset-typescript": "^7.29.7",
+    "@heroiclabs/nakama-js": "2.8.0",
+    "@rollup/plugin-babel": "^7.1.0",
+    "@rollup/plugin-node-resolve": "^16.0.3",
+    "@types/node": "26.6.5",
+    "nakama-runtime": "github:heroiclabs/nakama-common#v1.47.0",
+    "rollup": "^4.65.1",
+    "tsx": "^4.23.15",
+    "typescript": "~6.0.3",
+    "vitest": "^5.0.5"
+  }
+}

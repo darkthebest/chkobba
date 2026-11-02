@@ -1,0 +1,148 @@
+{
+  "seat": 1,
+  "phase": "playing",
+  "view": {
+    "seat": 1,
+    "playerCount": 4,
+    "rules": {
+      "faceValues": "Q8_J9_K10",
+      "captureObligation": "playedCardMustCapture",
+      "rankPriority": true,
+      "cutCardChoice": true,
+      "initialRedeal": "threeOrMoreSameRank",
+      "lastCardChkobba": false,
+      "targetScore": 21,
+      "winByTwo": false,
+      "instantWinAllDineri": false
+    },
+    "phase": "cutting",
+    "round": 1,
+    "deal": 1,
+    "dealer": 0,
+    "turn": 1,
+    "hand": [],
+    "handCounts": [],
+    "table": [],
+    "stockCount": 39,
+    "cut": {
+      "seat": 1,
+      "card": {
+        "id": "6H",
+        "rank": "6",
+        "suit": "H"
+      }
+    },
+    "pileCounts": [
+      0,
+      0
+    ],
+    "piles": [
+      [],
+      []
+    ],
+    "lastCapturer": null,
+    "chkobbas": [
+      0,
+      0
+    ],
+    "scores": [
+      0,
+      0
+    ],
+    "lastRound": null,
+    "winner": null,
+    "legalMoves": []
+  },
+  "players": [
+    {
+      "name": "Player 1",
+      "isBot": false,
+      "away": false,
+      "connected": true
+    },
+    {
+      "name": "Player 2",
+      "isBot": false,
+      "away": false,
+      "connected": true
+    },
+    {
+      "name": "Player 3",
+      "isBot": false,
+      "away": false,
+      "connected": true
+    },
+    {
+      "name": "Player 4",
+      "isBot": false,
+      "away": false,
+      "connected": true
+    }
+  ],
+  "log": [
+    {
+      "seq": 1,
+      "event": {
+        "type": "dealerDrawn",
+        "draws": [
+          [
+            {
+              "seat": 0,
+              "card": {
+                "id": "3H",
+                "rank": "3",
+                "suit": "H"
+              }
+            },
+            {
+              "seat": 1,
+              "card": {
+                "id": "5S",
+                "rank": "5",
+                "suit": "S"
+              }
+            },
+            {
+              "seat": 2,
+              "card": {
+                "id": "KC",
+                "rank": "K",
+                "suit": "C"
+              }
+            },
+            {
+              "seat": 3,
+              "card": {
+                "id": "QC",
+                "rank": "Q",
+                "suit": "C"
+              }
+            }
+          ]
+        ],
+        "dealer": 0
+      }
+    },
+    {
+      "seq": 2,
+      "event": {
+        "type": "roundStarted",
+        "round": 1,
+        "dealer": 0,
+        "redeals": 0
+      }
+    },
+    {
+      "seq": 3,
+      "event": {
+        "type": "cutOffered",
+        "round": 1,
+        "seat": 1
+      }
+    }
+  ],
+  "turnDeadline": 1700000010000,
+  "backfillAt": null,
+  "nextRoundAt": null,
+  "serverTime": 1700000000500
+}

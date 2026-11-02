@@ -1,0 +1,17 @@
+export const neon = {
+  bg: '#0E0B1F',
+  bg2: '#1D1640',
+  bg3: '#271D55',
+  slab1: '#2A1F5E',
+  slab2: '#14102B',
+  deep: '#07050F',
+  line: '#3A2D78',
+  ink: '#F3EEFF',
+  muted: '#B3ABDC',
+  muted2: '#8D84C2',
+  pink: '#FF3D8B',
+  cyan: '#2DE2E6',
+  gold: '#FFD23F',
+  green: '#7CFF6B',
+  violet: '#B58CFF',
+};

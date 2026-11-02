@@ -1,0 +1,463 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Chkobba - Direction 3: Modern Minimal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@600;700&family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0A0C10;--s1:#12161C;--s2:#1A2028;--s3:#222A34;--line:#262D38;--tx:#F4F6FA;--mu:#8A94A6;--mu2:#5E6878;
+  --lime:#B6F23C;--coral:#FF6B5B;--sky:#5CC8FF;--amber:#FFB02E;
+  --card:#F7F7F4;--red:#E5333F;--black:#0B0D10;
+}
+body{font-family:'Inter',sans-serif;background:#1B1F26;color:var(--tx);padding:32px 16px 64px;line-height:1.4}
+a{color:var(--lime)}
+.page-head{max-width:1100px;margin:0 auto 24px}
+.page-head h1{font-size:28px;font-weight:800;letter-spacing:-.02em}
+.page-head p{margin-top:8px;max-width:760px;font-size:14px;color:#aab3c2}
+.stage{display:flex;flex-wrap:wrap;gap:40px;justify-content:center}
+.slot{display:flex;flex-direction:column;align-items:center;gap:12px}
+.slot h2{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#aab3c2}
+.slot .tools{display:flex;gap:8px;min-height:30px}
+.tools button{font:600 12px 'Inter',sans-serif;padding:6px 14px;border-radius:999px;border:1px solid #3a4452;background:transparent;color:var(--tx);cursor:pointer}
+.tools button:hover{background:#262D38}
+.tools button.on{background:var(--lime);color:#0A0C10;border-color:var(--lime)}
+.notes{max-width:1100px;margin:40px auto 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
+.note{background:#12161C;border:1px solid #2a323d;border-radius:16px;padding:16px}
+.note h3{font-size:15px;margin-bottom:8px}
+.note ul{padding-left:18px;font-size:13px;color:#c5ccd8}
+.note li{margin-bottom:6px}
+.note code{color:var(--lime)}
+
+/* ---------- phone ---------- */
+.phone{width:390px;height:844px;border-radius:44px;overflow:hidden;position:relative;box-shadow:0 0 0 10px #000,0 0 0 11px #2a323d,0 24px 48px rgba(0,0,0,.5);background:var(--bg)}
+.screen{position:absolute;inset:0;display:flex;flex-direction:column}
+.statusbar{height:44px;flex:none;display:flex;align-items:flex-end;justify-content:space-between;padding:0 28px 6px;font:600 14px 'Inter',sans-serif;color:var(--tx)}
+.statusbar i{display:inline-block;width:22px;height:11px;border:1.5px solid var(--tx);border-radius:3px;position:relative}
+.statusbar i::after{content:'';position:absolute;left:1.5px;top:1.5px;bottom:1.5px;width:12px;background:var(--tx);border-radius:1px}
+.homebar{height:20px;flex:none;display:flex;justify-content:center;align-items:center;position:relative;z-index:30}
+.homebar b{width:120px;height:4px;border-radius:2px;background:rgba(244,246,250,.6)}
+svg.su{fill:currentColor;display:block}
+.r{color:var(--red)}.k{color:var(--black)}
+.gl.r{color:#FF6A74}.gl.k{color:#fff}
+
+/* ---------- cards ---------- */
+.card{position:relative;background:var(--card);flex:none;box-shadow:0 2px 0 rgba(0,0,0,.4),0 6px 12px rgba(0,0,0,.35);transition:transform .15s,opacity .15s,box-shadow .15s}
+.card.md{width:58px;height:84px;border-radius:10px}
+.card.lg{width:92px;height:132px;border-radius:14px}
+.card.sm{width:30px;height:42px;border-radius:6px;box-shadow:none}
+.card .clipper{position:absolute;inset:0;border-radius:inherit;overflow:hidden}
+.card .ix{position:absolute;display:flex;flex-direction:column;align-items:flex-start;line-height:.95}
+.card.md .ix{left:7px;top:6px}.card.lg .ix{left:10px;top:8px}
+.card.sm .ix{left:0;right:0;top:3px;align-items:center}
+.card .rk{font-family:'Space Grotesk',sans-serif;font-weight:700;letter-spacing:-.04em}
+.card.md .rk{font-size:32px}.card.lg .rk{font-size:50px}.card.sm .rk{font-size:17px}
+.card.md .su{width:22px;height:22px;margin-top:2px}.card.lg .su{width:34px;height:34px;margin-top:3px}.card.sm .su{width:11px;height:11px}
+.card .big{position:absolute;right:-6px;bottom:-6px;opacity:.12}
+.card.md .big{width:46px;height:46px}.card.lg .big{width:74px;height:74px}
+.card .nmz{position:absolute;left:10px;bottom:8px;font:700 10px 'Inter',sans-serif;letter-spacing:.06em;text-transform:uppercase;opacity:.55}
+.card.hl{box-shadow:0 0 0 3px var(--lime),0 0 16px 2px rgba(182,242,60,.4)}
+.card.dim{opacity:.28}
+.card.pv{box-shadow:0 0 0 3px var(--hc),0 0 18px 2px var(--hcg)}
+.card .badge{position:absolute;top:-9px;right:-9px;min-width:22px;height:22px;border-radius:7px;color:#0A0C10;font:800 13px 'Inter',sans-serif;display:flex;align-items:center;justify-content:center;z-index:3;border:2px solid var(--s1)}
+.card .badge+.badge{right:15px}
+.card .last{position:absolute;left:-6px;right:-6px;bottom:-14px;text-align:center;font:700 9px 'Inter',sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--coral);white-space:nowrap}
+.card.fanned{--r:0deg;--y:0px;transform:translateY(var(--y)) rotate(var(--r));transform-origin:50% 150%;cursor:pointer}
+.card.fanned:hover{transform:translateY(calc(var(--y) - 12px)) rotate(var(--r))}
+.bk{display:inline-block;width:13px;height:19px;border-radius:3px;border:1.5px solid #3A4452;background:var(--s2);position:relative}
+.bk::after{content:'';position:absolute;left:3px;right:3px;top:4px;bottom:4px;border:1px solid #3A4452;border-radius:1px}
+
+/* ---------- top ---------- */
+.scores{display:flex;gap:8px;margin:6px 12px 0;flex:none}
+.sc{flex:1;position:relative;background:var(--s1);border:1px solid var(--line);border-radius:16px;padding:8px 12px 10px;display:flex;align-items:center;gap:8px;overflow:hidden}
+.sc .dot{width:8px;height:8px;border-radius:50%;background:var(--c)}
+.sc .lb{font:700 11px 'Inter',sans-serif;letter-spacing:.12em;color:var(--mu)}
+.sc .n{font:700 32px/1 'Space Grotesk',sans-serif;color:var(--tx);letter-spacing:-.03em}
+.sc .st{margin-left:auto;display:flex;flex-direction:column;align-items:flex-end;gap:1px;font:500 11px 'Inter',sans-serif;color:var(--mu);line-height:1.2}
+.sc .st b{font:700 13px 'Space Grotesk',sans-serif;color:var(--tx)}
+.sc .st .bumped{animation:bump .8s 2}
+.sc .tr{position:absolute;left:0;right:0;bottom:0;height:3px;background:var(--s3)}
+.sc .tr i{display:block;height:100%;background:var(--c)}
+.sc.us{--c:var(--lime)}.sc.them{--c:var(--coral)}
+.pile{display:inline-flex;align-items:center;gap:4px}
+.pile svg{width:10px;height:12px}
+@keyframes bump{50%{color:var(--lime);transform:scale(1.25)}}
+.meta{display:flex;justify-content:center;gap:6px;margin:8px 12px 0;flex:none}
+.meta span{font:600 10.5px 'Inter',sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--mu);background:var(--s1);border:1px solid var(--line);border-radius:999px;padding:3px 10px;white-space:nowrap}
+.meta span b{color:var(--tx);font-weight:700}
+
+/* ---------- table ---------- */
+.region{position:relative;flex:1;min-height:0;margin:8px 12px 0;border-radius:24px;background:var(--s1);border:1px solid var(--line)}
+.region.flash{animation:flash 1.4s 2}
+@keyframes flash{50%{box-shadow:inset 0 0 0 2px var(--lime),0 0 24px rgba(182,242,60,.35)}}
+.tbl{position:absolute;left:62px;right:62px;top:104px;bottom:14px;display:flex;flex-wrap:wrap;align-content:center;justify-content:center;gap:14px 6px}
+.empty{color:var(--mu2);font:600 12px 'Inter',sans-serif;letter-spacing:.14em;text-transform:uppercase;text-align:center}
+.seat{position:absolute;display:flex;flex-direction:column;align-items:center;gap:5px}
+.seat.top{left:50%;top:12px;transform:translateX(-50%)}
+.seat.left{left:8px;top:48%;transform:translateY(-50%)}
+.seat.right{right:8px;top:48%;transform:translateY(-50%)}
+.avw{position:relative}
+.avw svg.rg{position:absolute;inset:0}
+.avw .fc{position:absolute;inset:6px;border-radius:50%;background:var(--s3);display:flex;align-items:center;justify-content:center;font:800 18px 'Inter',sans-serif;color:var(--tx)}
+.avw.dim .fc{color:var(--mu)}
+.avw .dl{position:absolute;right:-3px;bottom:-3px;width:17px;height:17px;border-radius:50%;background:var(--tx);color:var(--bg);font:800 10px 'Inter',sans-serif;display:flex;align-items:center;justify-content:center;border:2px solid var(--s1)}
+.prog{animation:drain 12s linear infinite}
+@keyframes drain{from{stroke-dashoffset:var(--o0)}to{stroke-dashoffset:var(--c)}}
+.nmx{font:700 11px 'Inter',sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--mu2);display:flex;align-items:center;gap:5px;white-space:nowrap}
+.seat.active .nmx{color:var(--tx)}
+.nmx small{font:600 10px 'Space Grotesk',sans-serif;color:var(--c);letter-spacing:0}
+.hid{display:flex;gap:3px;min-height:19px;align-items:center}
+.hid em{font:600 10px 'Inter',sans-serif;color:var(--mu2);font-style:normal}
+.log{flex:none;margin:8px 20px 0;min-height:40px;display:flex;flex-direction:column;gap:2px;justify-content:center}
+.log .p{font:500 12px 'Inter',sans-serif;color:var(--mu2)}
+.log .l{font:600 14px 'Inter',sans-serif;color:var(--tx);display:flex;align-items:center;gap:8px}
+.log .l i{width:8px;height:8px;border-radius:50%;background:var(--c);flex:none}
+
+/* ---------- bottom ---------- */
+.bottom{position:relative;flex:none;height:222px}
+.myrow{position:absolute;left:16px;right:16px;top:0;display:flex;align-items:center;gap:10px}
+.myrow .you{display:flex;flex-direction:column;gap:1px}
+.myrow .you b{font:800 11px 'Inter',sans-serif;letter-spacing:.12em;color:var(--mu)}
+.myrow .you span{font:700 14px 'Inter',sans-serif;color:var(--lime)}
+.myrow .you span.w{color:var(--mu2)}
+.myrow .sec{margin-left:auto;font:700 22px 'Space Grotesk',sans-serif;color:var(--lime)}
+.fan{position:absolute;left:0;right:0;bottom:0;height:170px;display:flex;justify-content:center;align-items:flex-end;padding-bottom:2px}
+.fan .card+.card{margin-left:-14px}
+.fan.idle{opacity:.45}
+.fan.idle .card{cursor:default}
+.toast{position:absolute;left:50%;top:128px;transform:translateX(-50%);background:var(--lime);color:#0A0C10;padding:7px 16px;border-radius:999px;font:700 13px 'Inter',sans-serif;opacity:0;transition:opacity .25s;pointer-events:none;z-index:40;white-space:nowrap}
+.toast.show{opacity:1}
+
+/* ---------- sheet ---------- */
+.sheet{position:absolute;left:0;right:0;bottom:0;z-index:20;background:#161B22;border-radius:28px 28px 0 0;border-top:1px solid #2f3945;padding:8px 14px 28px;box-shadow:0 -16px 40px rgba(0,0,0,.6)}
+.sheet.anim{animation:up .28s cubic-bezier(.2,.9,.3,1) both}
+@keyframes up{from{transform:translateY(100%)}to{transform:none}}
+.grab{width:40px;height:4px;border-radius:2px;background:#3A4452;margin:0 auto 8px}
+.sh-head{display:flex;align-items:center;gap:12px;margin-bottom:8px}
+.sh-head .t{font:700 16px 'Inter',sans-serif;line-height:1.15}
+.sh-head .t small{display:block;font:500 12px 'Inter',sans-serif;color:var(--mu)}
+.sh-head .x{margin-left:auto;width:34px;height:34px;border-radius:50%;background:var(--s3);border:none;color:var(--tx);font:600 15px 'Inter',sans-serif;cursor:pointer}
+.chips{display:flex;gap:8px;margin-bottom:10px;align-items:center}
+.chips .lb{font:700 10px 'Inter',sans-serif;letter-spacing:.12em;color:var(--mu2);text-transform:uppercase;margin-right:2px}
+.hc{display:flex;align-items:center;gap:1px;height:32px;padding:0 10px;border-radius:10px;background:var(--s3);border:1.5px solid transparent;font:700 17px 'Space Grotesk',sans-serif;cursor:pointer;color:var(--tx)}
+.hc svg{width:13px;height:13px;fill:currentColor}
+.hc.r{color:#FF6A74}.hc.k{color:#fff}
+.hc.on{border-color:var(--lime);background:#1F2A12}
+.rows{display:flex;flex-direction:column;gap:8px}
+.row{display:flex;align-items:center;gap:10px;height:56px;padding:0 12px 0 10px;border-radius:16px;background:var(--s2);border:2px solid transparent;cursor:pointer;color:var(--tx);width:100%;text-align:left;font:600 14px 'Inter',sans-serif;transition:background .12s}
+.row:hover{background:var(--s3)}
+.row .n{width:32px;height:32px;border-radius:10px;background:var(--oc);color:#0A0C10;font:800 16px 'Inter',sans-serif;display:flex;align-items:center;justify-content:center;flex:none}
+.row .cc{display:flex;align-items:center;gap:5px}
+.row .pl{color:var(--mu2);font-weight:700}
+.row .sum{margin-left:auto;font:600 12px 'Space Grotesk',sans-serif;color:var(--mu);white-space:nowrap}
+.row .go{width:32px;height:32px;border-radius:50%;background:var(--s3);display:flex;align-items:center;justify-content:center;color:var(--tx);font-weight:700;flex:none}
+.row.pv{border-color:var(--oc);background:#1c232c}
+.row.pv .go{background:var(--oc);color:#0A0C10}
+.row.place .n{background:var(--s3);color:var(--tx)}
+.row .hint{font:500 11px 'Inter',sans-serif;color:var(--mu);margin-left:4px}
+
+/* ---------- chkobba ---------- */
+.chk{position:absolute;left:0;right:0;top:36%;z-index:12;text-align:center;pointer-events:none}
+.chk .w{font:900 52px/1 'Inter',sans-serif;letter-spacing:-.04em;color:#fff;animation:slam .5s cubic-bezier(.2,1.4,.4,1) both;text-shadow:0 0 30px rgba(182,242,60,.5)}
+.chk .w em{color:var(--lime);font-style:normal}
+.chk .bar{height:5px;width:150px;margin:10px auto 0;background:var(--lime);border-radius:3px;transform-origin:left;animation:grow .6s .1s both}
+.chk .s{margin-top:10px;font:600 14px 'Inter',sans-serif;color:#d6dce6}
+.chk .s b{color:var(--lime)}
+.chk .ar{font:700 20px 'Cairo',sans-serif;color:var(--mu);margin-top:2px}
+@keyframes slam{0%{transform:scale(1.8);opacity:0}100%{transform:scale(1);opacity:1}}
+@keyframes grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+.rays{position:absolute;left:50%;top:41%;width:320px;height:320px;margin:-160px 0 0 -160px;z-index:11;pointer-events:none}
+.rays line{stroke:var(--lime);stroke-width:2;stroke-linecap:round;animation:ray 1.2s ease-out 3 both}
+@keyframes ray{0%{opacity:0}30%{opacity:1}100%{opacity:0;transform:scale(1.25);transform-origin:160px 160px}}
+.ghosts{position:absolute;left:0;right:0;top:46%;z-index:5;display:flex;justify-content:center;gap:6px}
+.ghosts .card{animation:fly 2.2s ease-in infinite}
+.ghosts .card:nth-child(2){animation-delay:.1s}.ghosts .card:nth-child(3){animation-delay:.2s}
+.ghosts .card.cap{box-shadow:0 0 0 3px var(--lime)}
+@keyframes fly{0%{transform:translateY(0) scale(1);opacity:1}100%{transform:translateY(-220px) scale(.4);opacity:0}}
+.plus3{position:absolute;z-index:13;font:700 13px 'Space Grotesk',sans-serif;color:var(--lime);animation:rise 1.6s infinite}
+@keyframes rise{0%{transform:translateY(6px);opacity:0}30%{opacity:1}100%{transform:translateY(-14px);opacity:0}}
+
+/* ---------- home ---------- */
+.home{position:absolute;inset:0;display:flex;flex-direction:column}
+.hero{flex:1;display:flex;flex-direction:column;align-items:center;padding-top:28px}
+.word{font:900 56px/1 'Inter',sans-serif;letter-spacing:-.05em}
+.word i{color:var(--lime);font-style:normal}
+.word-ar{font:700 22px 'Cairo',sans-serif;color:var(--mu);margin-top:2px}
+.hfan{position:relative;width:260px;height:200px;margin-top:26px}
+.hfan .card{position:absolute;left:50%;bottom:0;transform-origin:50% 140%}
+.hfan .card:nth-child(1){transform:translateX(-50%) rotate(-16deg)}
+.hfan .card:nth-child(2){transform:translateX(-50%) rotate(0)}
+.hfan .card:nth-child(3){transform:translateX(-50%) rotate(16deg)}
+.hfan .card.haya{box-shadow:0 0 0 3px var(--lime),0 0 24px rgba(182,242,60,.45)}
+.hero .cap{margin-top:14px;font:600 11px 'Inter',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--mu2)}
+.hero .cap b{color:var(--lime)}
+.zone{padding:0 16px 8px;display:flex;flex-direction:column;gap:14px}
+.zone h4{font:700 10.5px 'Inter',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--mu2);margin-bottom:6px;display:flex;justify-content:space-between}
+.zone h4 .ar{font:700 12px 'Cairo',sans-serif;letter-spacing:0}
+.seg{display:flex;gap:8px}
+.seg button{flex:1;height:58px;border-radius:16px;background:var(--s1);border:1.5px solid var(--line);color:var(--tx);font:700 17px 'Inter',sans-serif;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px}
+.seg button small{font:500 11px 'Inter',sans-serif;color:var(--mu)}
+.seg button:hover{background:var(--s2)}
+.seg button.on{border-color:var(--lime);background:#18200C;color:var(--lime)}
+.seg button.on small{color:#9fc24c}
+.start{height:66px;border-radius:20px;border:none;background:var(--lime);color:#0A0C10;font:800 20px 'Inter',sans-serif;letter-spacing:-.01em;cursor:pointer;margin-top:4px;display:flex;align-items:center;justify-content:center;gap:10px}
+.start:hover{filter:brightness(1.06)}
+.start:active{transform:scale(.98)}
+
+/* ---------- summary ---------- */
+.scrim{position:absolute;inset:0;background:rgba(0,0,0,.6);z-index:25}
+.rs{position:absolute;left:0;right:0;bottom:0;top:96px;background:#12161C;border-radius:28px 28px 0 0;border-top:1px solid #2f3945;padding:8px 18px 34px;display:flex;flex-direction:column;z-index:26;animation:up .3s both}
+.rs h3{font:800 28px 'Inter',sans-serif;letter-spacing:-.03em;margin-top:6px}
+.rs h3.win{color:var(--lime);font-size:38px}
+.rs .sub{font:500 13px 'Inter',sans-serif;color:var(--mu);margin-bottom:8px}
+.rs .sub .ar{font:700 14px 'Cairo',sans-serif}
+.grid{display:grid;grid-template-columns:1.25fr 1fr 1fr;align-items:center}
+.grid.hd{padding:6px 0;font:700 11px 'Inter',sans-serif;letter-spacing:.14em;color:var(--mu)}
+.grid.hd div+div{display:flex;align-items:center;gap:6px;justify-content:center}
+.grid.hd i{width:8px;height:8px;border-radius:50%}
+.grid.rw{padding:9px 0;border-top:1px solid var(--line)}
+.grid .lbl{font:700 15px 'Inter',sans-serif}
+.grid .lbl small{display:block;font:600 11px 'Cairo',sans-serif;color:var(--mu2)}
+.grid .v{text-align:center;font:700 26px/1 'Space Grotesk',sans-serif;color:var(--mu2)}
+.grid .v small{display:block;font:500 11px 'Inter',sans-serif;color:var(--mu);margin-top:3px}
+.grid .v.w.us{color:var(--lime)}.grid .v.w.them{color:var(--coral)}
+.grid .v.w small{color:#c5ccd8}
+.tot{margin-top:auto;border-top:1px solid var(--line);padding-top:10px}
+.tot .grid{padding:4px 0}
+.tot .v{font-size:34px;color:var(--tx)}
+.tot .v.us{color:var(--lime)}.tot .v.them{color:var(--coral)}
+.tot .lbl{font:700 12px 'Inter',sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--mu)}
+.trk{height:4px;border-radius:2px;background:var(--s3);margin:2px 20px 0;overflow:hidden}
+.trk i{display:block;height:100%}
+.rs .acts{display:flex;gap:10px;margin-top:16px}
+.rs .b{flex:1;height:60px;border-radius:18px;font:800 17px 'Inter',sans-serif;cursor:pointer;border:1.5px solid #3a4452;background:transparent;color:var(--tx)}
+.rs .b.pri{background:var(--lime);border-color:var(--lime);color:#0A0C10;flex:2}
+.rs .b:active{transform:scale(.98)}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<defs>
+  <symbol id="s-h" viewBox="0 0 100 100"><path d="M50 90C20 64 6 48 6 31 6 17 17 8 30 8c9 0 16 5 20 13 4-8 11-13 20-13 13 0 24 9 24 23 0 17-14 33-44 59z"/></symbol>
+  <symbol id="s-d" viewBox="0 0 100 100"><path d="M50 3 89 50 50 97 11 50z"/></symbol>
+  <symbol id="s-s" viewBox="0 0 100 100"><path d="M50 4C50 4 91 35 91 58c0 14-11 22-22 22-8 0-14-4-17-9 1 11 5 18 13 23H35c8-5 12-12 13-23-3 5-9 9-17 9-11 0-22-8-22-22C9 35 50 4 50 4z"/></symbol>
+  <symbol id="s-c" viewBox="0 0 100 100"><circle cx="50" cy="28" r="22"/><circle cx="26" cy="60" r="22"/><circle cx="74" cy="60" r="22"/><path d="M43 55h14l6 40H37z"/></symbol>
+</defs>
+</svg>
+
+<div class="page-head">
+  <p><a href="chkobba-designs-index.html">&larr; All directions</a></p>
+  <h1>Direction 3 &middot; Modern Minimal</h1>
+  <p>Dark, flat, high contrast and built for one thumb: oversized card indices, a fanned hand in the thumb zone, capture choices in a bottom sheet, a timer ring around whoever is on turn, and compact score chips with visible pile counts. In frame b, tap an option row to preview, tap again to confirm; use the hand chips to switch card; close the sheet with the x to see the fan and tap a card to reopen it.</p>
+</div>
+
+<div class="stage">
+  <div class="slot"><h2>a &middot; Home</h2><div class="tools"></div><div class="phone" id="f-home"></div></div>
+  <div class="slot"><h2>b &middot; Your turn, card selected</h2><div class="tools"><button id="b-reset">Reset</button></div><div class="phone" id="f-turn"></div></div>
+  <div class="slot"><h2>c &middot; Bot turn + CHKOBBA</h2><div class="tools"><button id="c-replay">Replay moment</button></div><div class="phone" id="f-chk"></div></div>
+  <div class="slot"><h2>d &middot; Round summary</h2><div class="tools"><button id="d-round" class="on">Round done</button><button id="d-game">Game over</button></div><div class="phone" id="f-sum"></div></div>
+</div>
+
+<div class="notes">
+  <div class="note"><h3>UX improvements proposed</h3><ul>
+    <li><b>Capture bottom sheet in the thumb zone.</b> Options are 56px rows with numbered colour tags; the same tag appears on the table cards. The selected card and your other cards sit in the sheet header as chips, so you can switch card without closing the sheet. Proposal for the real build: press-and-hold previews an option, release confirms (one-handed, no second tap).</li>
+    <li><b>Timer ring on the active avatar.</b> A draining arc in the team colour shows whose turn it is and how long they have; inactive avatars drop to a faint team-coloured outline and muted name. It doubles as the "bot is thinking" cue and a future turn-timeout.</li>
+    <li><b>Last-played marker.</b> The newest table card is labelled with the player who put it down (here "KARIM" in coral), and on a capture the played card stays visible, outlined in lime, as it flies to the pile with the captured cards.</li>
+    <li><b>Pile counts always visible.</b> Each score chip shows cards captured, sweeps and a thin progress line to 21, which also makes the Karta and Dineri races readable mid-round.</li>
+    <li><b>Minimal CHKOBBA.</b> A single slam of the word, lime rays, a flash outline on the table and a "+3 cards" floating off the sweeper's pile, with no confetti. Fast enough not to interrupt a rapid game.</li>
+  </ul></div>
+  <div class="note"><h3>React Native notes</h3><ul>
+    <li>Everything is Views + Text + <code>react-native-svg</code> (suits, timer ring via <code>Circle strokeDasharray/strokeDashoffset</code> animated with <code>Animated</code>/Reanimated).</li>
+    <li>Fan = absolutely-positioned cards with <code>transform: [{translateY},{rotate}]</code> and <code>transformOrigin</code> (RN 0.73+) or a wrapper View for the pivot.</li>
+    <li>Bottom sheet: <code>@gorhom/bottom-sheet</code> or a plain animated View; no blur used.</li>
+    <li>Fonts: Inter, Space Grotesk (numerals), Cairo (Arabic labels).</li>
+  </ul></div>
+  <div class="note"><h3>Risks</h3><ul>
+    <li>Least ownable of the three: flat dark card games are common, so it relies on polish and motion for identity and nothing says "Tunisia".</li>
+    <li>Oversized indices mean no pips, so players cannot visually count suit symbols (Dineri). The pile chips help but this removes a classic cue.</li>
+    <li>The sheet hides the fan while open, so you cannot see the chosen card in context; the header card and chips only partly compensate.</li>
+    <li>Table area is the tightest of the three: 10 table cards (3 rows) need the avatars and log to stay compact.</li>
+  </ul></div>
+</div>
+
+<script>
+const VAL={A:1,2:2,3:3,4:4,5:5,6:6,7:7,Q:8,J:9,K:10};
+const SYM={d:'♦',h:'♥',s:'♠',c:'♣'};
+const FACE={Q:'Moujira',J:'Kawel',K:'Ray'};
+const isRed=s=>s==='d'||s==='h';
+const C=id=>({id,r:id.slice(0,-1),s:id.slice(-1)});
+const lab=id=>{const c=C(id);return c.r+SYM[c.s]};
+const glyph=s=>s.replace(/[♦♥]/g,m=>`<span class="gl r">${m}</span>`).replace(/[♠♣]/g,m=>`<span class="gl k">${m}</span>`);
+const OC=['#B6F23C','#5CC8FF','#FFB02E'];
+const OCG=['rgba(182,242,60,.45)','rgba(92,200,255,.45)','rgba(255,176,46,.45)'];
+function optionsFor(card,tableIds){
+  const t=tableIds.map(C),same=t.filter(x=>x.r===card.r);
+  if(same.length) return same.map(x=>[x.id]);
+  const v=VAL[card.r],res=[];
+  for(let m=1;m<(1<<t.length);m++){let sum=0,ids=[];for(let i=0;i<t.length;i++)if(m&(1<<i)){sum+=VAL[t[i].r];ids.push(t[i].id)}if(sum===v)res.push(ids)}
+  return res.sort((a,b)=>b.length-a.length);
+}
+const suit=(s,cls='su')=>`<svg class="${cls}" viewBox="0 0 100 100"><use href="#s-${s}"/></svg>`;
+function cardHTML(id,size,o={}){
+  const c=C(id),col=isRed(c.s)?'r':'k';
+  const cls=['card',size,col,o.hl&&'hl',o.dim&&'dim',o.pv&&'pv',o.fan&&'fanned',o.cap&&'cap'].filter(Boolean).join(' ');
+  const badges=(o.badges||[]).map(n=>`<span class="badge" style="background:${OC[n-1]}">${n}</span>`).join('');
+  const style=[o.hc?`--hc:${o.hc};--hcg:${o.hcg}`:'',o.fan?`--r:${o.fan.r}deg;--y:${o.fan.y}px`:''].filter(Boolean).join(';');
+  const nm=(size==='lg'&&FACE[c.r])?`<span class="nmz">${FACE[c.r]}</span>`:'';
+  const big=size==='sm'?'':`<div class="clipper"><svg class="big su" viewBox="0 0 100 100"><use href="#s-${c.s}"/></svg></div>`;
+  return `<div class="${cls}" style="${style}" data-id="${id}" ${o.hand?`data-hand="${id}"`:''} role="${o.hand?'button':'img'}" aria-label="${c.r} of ${SYM[c.s]}">${big}${badges}${o.last?`<span class="last">${o.last}</span>`:''}<div class="ix"><span class="rk">${c.r}</span>${suit(c.s)}</div>${nm}</div>`;
+}
+const statusbar=()=>`<div class="statusbar"><span>9:41</span><i></i></div>`;
+const homebar=()=>`<div class="homebar"><b></b></div>`;
+const TEAM={us:'#B6F23C',them:'#FF6B5B'};
+const P={
+  you:{n:'You',i:'Y',team:'us'},amira:{n:'Amira',i:'A',team:'us'},
+  hedi:{n:'Hédi',i:'H',team:'them'},karim:{n:'Karim',i:'K',team:'them'}
+};
+function avatar(p,size,o={}){
+  const sw=o.turn?4:3,r=(size-sw)/2,c=2*Math.PI*r,col=TEAM[p.team];
+  const ring=o.turn
+    ?`<circle cx="${size/2}" cy="${size/2}" r="${r}" fill="none" stroke="#262D38" stroke-width="${sw}"/><circle class="prog" cx="${size/2}" cy="${size/2}" r="${r}" fill="none" stroke="${col}" stroke-width="${sw}" stroke-linecap="round" stroke-dasharray="${c}" style="--c:${c};--o0:${c*.35}" transform="rotate(-90 ${size/2} ${size/2})"/>`
+    :`<circle cx="${size/2}" cy="${size/2}" r="${r}" fill="none" stroke="${col}" stroke-opacity=".35" stroke-width="${sw}"/>`;
+  return `<div class="avw ${o.turn?'':'dim'}" style="width:${size}px;height:${size}px"><svg class="rg" width="${size}" height="${size}">${ring}</svg><div class="fc">${p.i}</div>${o.dealer?'<div class="dl" title="Dealer">D</div>':''}</div>`;
+}
+function seat(pos,p,n,o){
+  const size=pos==='top'?54:48;
+  const hid=n>0?Array.from({length:n},()=>'<i class="bk"></i>').join(''):'<em>empty</em>';
+  return `<div class="seat ${pos} ${o.turn?'active':''}" style="--c:${TEAM[p.team]}">${avatar(p,size,o)}<div class="nmx">${p.n}${o.turn?'<small>'+(o.sec||'')+'</small>':''}</div><div class="hid">${hid}</div></div>`;
+}
+function scores(s){
+  const chip=(cls,lb,n,chk,pile,bump)=>`<div class="sc ${cls}"><span class="dot"></span><span class="lb">${lb}</span><span class="n">${n}</span><span class="st"><span class="pile ${bump?'bumped':''}" title="Cards captured"><svg viewBox="0 0 10 12"><rect x="1" y="0" width="7" height="10" rx="1.5" fill="currentColor" opacity=".5"/><rect x="3" y="2" width="7" height="10" rx="1.5" fill="currentColor"/></svg><b>${pile}</b></span><span>★ ${chk} sweep${chk===1?'':'s'}</span></span><span class="tr"><i style="width:${n/21*100}%"></i></span></div>`;
+  return `<div class="scores">${chip('us','US',s.us,s.chkUs,s.pileUs,s.bumpUs)}${chip('them','THEM',s.them,s.chkThem,s.pileThem)}</div>
+  <div class="meta"><span>Round <b>${s.round}</b></span><span>To <b>21</b></span><span>Stock <b>${s.stock}</b></span><span>Dealer <b>Karim</b></span></div>`;
+}
+
+function tableScreen(cfg){
+  const sel=cfg.sel?C(cfg.sel):null;
+  const sheetOpen=!!(cfg.myTurn&&sel);
+  const opts=sheetOpen?optionsFor(sel,cfg.table):[];
+  const placeOnly=sheetOpen&&opts.length===0;
+  const badgeMap={};opts.forEach((o,i)=>o.forEach(id=>(badgeMap[id]=badgeMap[id]||[]).push(i+1)));
+  const pvIds=cfg.preview!=null&&opts[cfg.preview]?opts[cfg.preview]:null;
+  const hl=new Set(opts.flat());
+  const tableHTML=cfg.table.map(id=>cardHTML(id,'md',{
+    hl:hl.has(id)&&!pvIds,pv:pvIds&&pvIds.includes(id),hc:pvIds?OC[cfg.preview]:null,hcg:pvIds?OCG[cfg.preview]:null,
+    dim:(hl.size&&!hl.has(id))||(pvIds&&!pvIds.includes(id)),
+    badges:badgeMap[id]&&(!pvIds||pvIds.includes(id))?badgeMap[id]:null,
+    last:id===cfg.lastId?cfg.lastBy:null})).join('');
+  const sum=o=>o.map(id=>VAL[C(id).r]).reduce((a,b)=>a+b,0);
+  const rowsHTML=opts.map((o,i)=>`<button class="row ${cfg.preview===i?'pv':''}" style="--oc:${OC[i]}" data-opt="${i}" aria-label="Take ${o.map(lab).join(' + ')}"><span class="n">${i+1}</span><span class="cc">${o.map((id,j)=>(j?'<span class="pl">+</span>':'')+cardHTML(id,'sm',{})).join('')}</span><span class="sum">${o.length} cards = ${sum(o)}</span><span class="go">${cfg.preview===i?'✓':'›'}</span></button>`).join('')
+    +(placeOnly?`<button class="row place" data-opt="place" style="--oc:#fff"><span class="n">↓</span><span style="font-weight:700">Place on table</span><span class="hint">nothing to capture</span><span class="go" style="margin-left:auto">›</span></button>`:'');
+  const handFan=(()=>{
+    const n=cfg.hand.length;
+    const f=n===3?[{r:-9,y:16},{r:0,y:0},{r:9,y:16}]:n===2?[{r:-5,y:6},{r:5,y:6}]:[{r:0,y:0}];
+    return cfg.hand.map((id,i)=>cardHTML(id,'lg',{fan:f[i],hand:cfg.myTurn})).join('');
+  })();
+  const sheet=sheetOpen?`<div class="sheet ${cfg.anim?'anim':''}"><div class="grab"></div>
+    <div class="sh-head">${cardHTML(cfg.sel,'sm',{})}<div class="t">${FACE[sel.r]?FACE[sel.r]+' '+lab(cfg.sel):'Play '+lab(cfg.sel)}<small>value ${VAL[sel.r]} &middot; ${opts.length?opts.length+' capture option'+(opts.length>1?'s':''):'no capture'}</small></div><button class="x" data-close aria-label="Cancel">✕</button></div>
+    <div class="chips"><span class="lb">Hand</span>${cfg.hand.map(id=>{const c=C(id);return `<button class="hc ${isRed(c.s)?'r':'k'} ${id===cfg.sel?'on':''}" data-hand="${id}">${c.r}${suit(c.s,'')}</button>`}).join('')}</div>
+    <div class="rows">${rowsHTML}</div></div>`:'';
+  const t=cfg.turn,me=cfg.myTurn;
+  const L=cfg.log;
+  return `<div class="screen">${statusbar()}${scores(cfg.score)}
+    <div class="region ${cfg.chkobba?'flash':''}">
+      ${seat('top',P.amira,cfg.counts.top,{turn:t==='top',sec:'9s'})}
+      ${seat('left',P.karim,cfg.counts.left,{turn:t==='left',dealer:true,sec:'9s'})}
+      ${seat('right',P.hedi,cfg.counts.right,{turn:t==='right',sec:'9s'})}
+      <div class="tbl">${cfg.table.length?tableHTML:`<div class="empty">${cfg.chkobba?'':'Table empty'}</div>`}</div>
+      ${cfg.ghost?`<div class="ghosts">${cardHTML('4d','md',{})}${cardHTML('5h','md',{})}${cardHTML('Js','md',{cap:true})}</div>`:''}
+      ${cfg.chkobba?`<svg class="rays" viewBox="0 0 320 320">${Array.from({length:20},(_,i)=>{const a=i*Math.PI/10,r1=118,r2=150;return `<line x1="${(160+r1*Math.cos(a)).toFixed(1)}" y1="${(160+r1*Math.sin(a)).toFixed(1)}" x2="${(160+r2*Math.cos(a)).toFixed(1)}" y2="${(160+r2*Math.sin(a)).toFixed(1)}" style="animation-delay:${(i%4)*.08}s"/>`}).join('')}</svg>
+      <div class="chk"><div class="w">CHK<em>OBBA</em></div><div class="bar"></div><div class="s"><b>Amira</b> swept the table &middot; +1 for Us</div><div class="ar">شكبّة</div></div>
+      <span class="plus3" style="left:150px;top:78px">+3 cards</span>`:''}
+    </div>
+    <div class="log" style="--c:${TEAM[L.who.team]}">${L.prev?`<div class="p">${glyph(L.prev)}</div>`:''}<div class="l"><i></i><span>${glyph(L.text)}</span></div></div>
+    <div class="bottom">
+      <div class="myrow">${avatar(P.you,44,{turn:me})}<div class="you"><b>YOU</b><span class="${me?'':'w'}">${me?'YOUR TURN':(cfg.waitText||'')}</span></div>${me?'<div class="sec">9s</div>':''}</div>
+      <div class="fan ${me?'':'idle'}">${handFan}</div>
+    </div>
+    ${sheet}
+    ${homebar()}
+    <div class="toast" id="toast-${cfg.key}"></div>
+  </div>`;
+}
+
+/* ===== home ===== */
+const homeState={mode:'4',target:'21'};
+function homeScreen(){
+  const seg=(key,items)=>`<div class="seg">${items.map(([v,t,s])=>`<button data-seg="${key}" data-val="${v}" class="${homeState[key]===v?'on':''}">${t}<small>${s}</small></button>`).join('')}</div>`;
+  return `<div class="home">${statusbar()}
+   <div class="hero"><div class="word">chkobba<i>.</i></div><div class="word-ar">شكبّة</div>
+     <div class="hfan">${cardHTML('Kd','lg',{})}${cardHTML('7d','lg',{}).replace('class="card','class="card haya')}${cardHTML('As','lg',{})}</div>
+     <div class="cap">The Tunisian classic &middot; <b>7♦</b> = 7aya</div></div>
+   <div class="zone">
+     <div><h4><span>Table</span><span class="ar">الطاولة</span></h4>${seg('mode',[['4','2 vs 2','with bot partner'],['2','1 vs 1','head to head']])}</div>
+     <div><h4><span>Play to</span><span class="ar">الهدف</span></h4>${seg('target',[['21','21','classic'],['11','11','quick']])}</div>
+     <button class="start">Start game &rarr;</button>
+   </div>${homebar()}</div>`;
+}
+
+/* ===== summary ===== */
+function summary(over){
+  const rows=[['Karta','كارطة','22 cards',1,'18 cards',0],['Dineri','ديناري','4 ♦',0,'6 ♦',1],['Bermila','برميلة','3×7 · 1×6',1,'1×7 · 3×6',0],['7aya','سبعة الحيّة','7♦',1,'no 7♦',0],['Chkobba','شكبّة','1 sweep',1,'1 sweep',1]];
+  const usG=over?22:13,thG=over?15:8;
+  const cell=(p,d,t)=>`<div class="v ${p?'w':''} ${t}">${p?'+'+p:'0'}<small>${d}</small></div>`;
+  return `<div class="scrim"></div><div class="rs"><div class="grab"></div>
+    <h3 class="${over?'win':''}">${over?'You win!':'Round 3 done'}</h3>
+    <div class="sub">${over?'Final score '+usG+' – '+thG+' &middot; first to 21':'Points this round, by category'} <span class="ar">${over?'ربحتم':'انتهت الدورة'}</span></div>
+    <div class="grid hd"><div></div><div><i style="background:var(--lime)"></i>US</div><div><i style="background:var(--coral)"></i>THEM</div></div>
+    ${rows.map(r=>`<div class="grid rw"><div class="lbl">${r[0]}<small>${r[1]}</small></div>${cell(r[3],glyph(r[2]),'us')}${cell(r[5],glyph(r[4]),'them')}</div>`).join('')}
+    <div class="tot">
+      <div class="grid"><div class="lbl">Round</div><div class="v us">+4</div><div class="v them">+2</div></div>
+      <div class="grid"><div class="lbl">Game</div><div class="v us">${usG}</div><div class="v them">${thG}</div></div>
+      <div class="grid"><div></div><div class="trk"><i style="width:${Math.min(100,usG/21*100)}%;background:var(--lime)"></i></div><div class="trk"><i style="width:${thG/21*100}%;background:var(--coral)"></i></div></div>
+    </div>
+    <div class="acts">${over?'<button class="b pri">Play again</button><button class="b">Home</button>':'<button class="b pri">Next round</button>'}</div>
+  </div>`;
+}
+
+/* ===== mount ===== */
+const TABLE=['Ah','3s','5c','4s','7d','Kc','Kh'];
+const turnCfg=()=>({key:'b',myTurn:true,turn:'me',sel:'Js',preview:null,anim:false,table:TABLE,hand:['Js','6c','2h'],lastId:'Kh',lastBy:'Karim',
+  counts:{top:3,left:3,right:3},score:{us:9,them:6,chkUs:0,chkThem:1,pileUs:14,pileThem:11,round:3,stock:16},
+  log:{who:P.karim,prev:'Hédi placed 3♠',text:'Karim placed K♥'}});
+let T=turnCfg();
+function mountTurn(){document.getElementById('f-turn').innerHTML=tableScreen(T);T.anim=false}
+function mountChk(){document.getElementById('f-chk').innerHTML=tableScreen({key:'c',myTurn:false,turn:'left',table:[],hand:['6c','2h'],ghost:true,chkobba:true,
+  counts:{top:2,left:3,right:2},score:{us:9,them:6,chkUs:1,chkThem:1,pileUs:17,pileThem:11,round:3,stock:16,bumpUs:true},waitText:'Waiting for Karim',
+  log:{who:P.amira,prev:'Hédi placed 5♥',text:'Amira took 4♦ + 5♥ with J♠'}})}
+function mountHome(){document.getElementById('f-home').innerHTML=homeScreen()}
+let over=false;
+function mountSum(){
+  document.getElementById('f-sum').innerHTML=tableScreen({key:'d',myTurn:false,turn:'none',table:['Ah','5c'],hand:[],counts:{top:0,left:0,right:0},
+    score:{us:9,them:6,chkUs:1,chkThem:1,pileUs:22,pileThem:18,round:3,stock:0},log:{who:P.hedi,prev:'Last cards dealt',text:'Hédi took 3♠ + 4♦ with 7♣'},waitText:''});
+  document.getElementById('f-sum').insertAdjacentHTML('beforeend',summary(over));
+  document.getElementById('d-round').classList.toggle('on',!over);document.getElementById('d-game').classList.toggle('on',over);
+}
+function toast(msg){const t=document.getElementById('toast-b');if(!t)return;t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),1600)}
+document.getElementById('f-turn').addEventListener('click',e=>{
+  if(e.target.closest('[data-close]')){T.sel=null;T.preview=null;mountTurn();return}
+  const h=e.target.closest('[data-hand]'),o=e.target.closest('[data-opt]');
+  if(h){const id=h.dataset.hand;const opening=!T.sel;T.sel=id;T.preview=null;T.anim=opening;mountTurn();return}
+  if(o){const v=o.dataset.opt;
+    if(v==='place'){T.sel=null;mountTurn();toast('Placed on table (prototype)');setTimeout(()=>{T=turnCfg();mountTurn()},1500);return}
+    const i=+v;
+    if(T.preview===i){const names=optionsFor(C(T.sel),T.table)[i].map(lab).join(' + ');T.sel=null;T.preview=null;mountTurn();toast('Took '+names+' (prototype)');setTimeout(()=>{T=turnCfg();mountTurn()},1700)}
+    else{T.preview=i;mountTurn()}
+  }
+});
+document.getElementById('b-reset').onclick=()=>{T=turnCfg();mountTurn()};
+document.getElementById('c-replay').onclick=mountChk;
+document.getElementById('d-round').onclick=()=>{over=false;mountSum()};
+document.getElementById('d-game').onclick=()=>{over=true;mountSum()};
+document.getElementById('f-home').addEventListener('click',e=>{
+  const b=e.target.closest('[data-seg]');if(b){homeState[b.dataset.seg]=b.dataset.val;mountHome()}
+});
+mountHome();mountTurn();mountChk();mountSum();
+</script>
+</body>
+</html>

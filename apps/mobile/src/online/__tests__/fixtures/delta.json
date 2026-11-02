@@ -1,0 +1,266 @@
+{
+  "seat": 0,
+  "phase": "playing",
+  "view": {
+    "seat": 0,
+    "playerCount": 4,
+    "rules": {
+      "faceValues": "Q8_J9_K10",
+      "captureObligation": "playedCardMustCapture",
+      "rankPriority": true,
+      "cutCardChoice": true,
+      "initialRedeal": "threeOrMoreSameRank",
+      "lastCardChkobba": false,
+      "targetScore": 21,
+      "winByTwo": false,
+      "instantWinAllDineri": false
+    },
+    "phase": "playing",
+    "round": 2,
+    "deal": 1,
+    "dealer": 1,
+    "turn": 0,
+    "hand": [
+      {
+        "id": "4S",
+        "rank": "4",
+        "suit": "S"
+      },
+      {
+        "id": "KC",
+        "rank": "K",
+        "suit": "C"
+      },
+      {
+        "id": "3D",
+        "rank": "3",
+        "suit": "D"
+      }
+    ],
+    "handCounts": [
+      3,
+      3,
+      2,
+      2
+    ],
+    "table": [
+      {
+        "id": "QS",
+        "rank": "Q",
+        "suit": "S"
+      },
+      {
+        "id": "JH",
+        "rank": "J",
+        "suit": "H"
+      },
+      {
+        "id": "KD",
+        "rank": "K",
+        "suit": "D"
+      }
+    ],
+    "stockCount": 24,
+    "cut": null,
+    "pileCounts": [
+      0,
+      3
+    ],
+    "piles": [
+      [],
+      [
+        {
+          "id": "5D",
+          "rank": "5",
+          "suit": "D"
+        },
+        {
+          "id": "4D",
+          "rank": "4",
+          "suit": "D"
+        },
+        {
+          "id": "AS",
+          "rank": "A",
+          "suit": "S"
+        }
+      ]
+    ],
+    "lastCapturer": 3,
+    "chkobbas": [
+      0,
+      0
+    ],
+    "scores": [
+      4,
+      1
+    ],
+    "lastRound": {
+      "round": 1,
+      "teams": [
+        {
+          "cards": 25,
+          "dineri": 7,
+          "sevens": 3,
+          "sixes": 2,
+          "hasHaya": true,
+          "chkobbas": 0,
+          "points": {
+            "karta": 1,
+            "dineri": 1,
+            "bermila": 1,
+            "haya": 1,
+            "chkobba": 0
+          },
+          "total": 4
+        },
+        {
+          "cards": 15,
+          "dineri": 3,
+          "sevens": 1,
+          "sixes": 2,
+          "hasHaya": false,
+          "chkobbas": 1,
+          "points": {
+            "karta": 0,
+            "dineri": 0,
+            "bermila": 0,
+            "haya": 0,
+            "chkobba": 1
+          },
+          "total": 1
+        }
+      ],
+      "allDineri": null
+    },
+    "winner": null,
+    "legalMoves": [
+      {
+        "seat": 0,
+        "cardId": "4S",
+        "capture": []
+      },
+      {
+        "seat": 0,
+        "cardId": "KC",
+        "capture": [
+          "KD"
+        ]
+      },
+      {
+        "seat": 0,
+        "cardId": "3D",
+        "capture": []
+      }
+    ]
+  },
+  "players": [
+    {
+      "name": "Player 1",
+      "isBot": false,
+      "away": true,
+      "connected": true
+    },
+    {
+      "name": "Sonia",
+      "isBot": true,
+      "away": false,
+      "connected": true
+    },
+    {
+      "name": "Mongi",
+      "isBot": true,
+      "away": false,
+      "connected": true
+    },
+    {
+      "name": "Fatma",
+      "isBot": true,
+      "away": false,
+      "connected": true
+    }
+  ],
+  "log": [
+    {
+      "seq": 46,
+      "event": {
+        "type": "roundStarted",
+        "round": 2,
+        "dealer": 1,
+        "redeals": 0
+      }
+    },
+    {
+      "seq": 47,
+      "event": {
+        "type": "cutOffered",
+        "round": 2,
+        "seat": 2
+      }
+    },
+    {
+      "seq": 48,
+      "event": {
+        "type": "cutResolved",
+        "seat": 2,
+        "kept": false,
+        "card": {
+          "id": "QS",
+          "rank": "Q",
+          "suit": "S"
+        }
+      }
+    },
+    {
+      "seq": 49,
+      "event": {
+        "type": "handsDealt",
+        "round": 2,
+        "deal": 1
+      }
+    },
+    {
+      "seq": 50,
+      "event": {
+        "type": "cardPlayed",
+        "seat": 2,
+        "card": {
+          "id": "AS",
+          "rank": "A",
+          "suit": "S"
+        },
+        "captured": [],
+        "chkobba": false
+      }
+    },
+    {
+      "seq": 51,
+      "event": {
+        "type": "cardPlayed",
+        "seat": 3,
+        "card": {
+          "id": "5D",
+          "rank": "5",
+          "suit": "D"
+        },
+        "captured": [
+          {
+            "id": "4D",
+            "rank": "4",
+            "suit": "D"
+          },
+          {
+            "id": "AS",
+            "rank": "A",
+            "suit": "S"
+          }
+        ],
+        "chkobba": false
+      }
+    }
+  ],
+  "turnDeadline": null,
+  "backfillAt": null,
+  "nextRoundAt": null,
+  "serverTime": 1700000101100
+}

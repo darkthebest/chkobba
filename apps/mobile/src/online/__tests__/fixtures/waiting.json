@@ -1,0 +1,21 @@
+{
+  "seat": 0,
+  "phase": "waiting",
+  "view": null,
+  "players": [
+    {
+      "name": "Player 1",
+      "isBot": false,
+      "away": false,
+      "connected": true
+    },
+    null,
+    null,
+    null
+  ],
+  "log": [],
+  "turnDeadline": null,
+  "backfillAt": 1700000015000,
+  "nextRoundAt": null,
+  "serverTime": 1700000001000
+}

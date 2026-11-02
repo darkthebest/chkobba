@@ -1,0 +1,6 @@
+packages:
+  - 'apps/*'
+  - 'packages/*'
+
+# Expo recommends hoisted installs for React Native libraries in pnpm monorepos.
+nodeLinker: hoisted

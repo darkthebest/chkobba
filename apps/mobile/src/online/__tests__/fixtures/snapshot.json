@@ -1,0 +1,229 @@
+{
+  "seat": 1,
+  "phase": "playing",
+  "view": {
+    "seat": 1,
+    "playerCount": 4,
+    "rules": {
+      "faceValues": "Q8_J9_K10",
+      "captureObligation": "playedCardMustCapture",
+      "rankPriority": true,
+      "cutCardChoice": true,
+      "initialRedeal": "threeOrMoreSameRank",
+      "lastCardChkobba": false,
+      "targetScore": 21,
+      "winByTwo": false,
+      "instantWinAllDineri": false
+    },
+    "phase": "playing",
+    "round": 1,
+    "deal": 1,
+    "dealer": 0,
+    "turn": 1,
+    "hand": [
+      {
+        "id": "6H",
+        "rank": "6",
+        "suit": "H"
+      },
+      {
+        "id": "JH",
+        "rank": "J",
+        "suit": "H"
+      },
+      {
+        "id": "QS",
+        "rank": "Q",
+        "suit": "S"
+      }
+    ],
+    "handCounts": [
+      3,
+      3,
+      3,
+      3
+    ],
+    "table": [
+      {
+        "id": "6S",
+        "rank": "6",
+        "suit": "S"
+      },
+      {
+        "id": "4H",
+        "rank": "4",
+        "suit": "H"
+      },
+      {
+        "id": "2C",
+        "rank": "2",
+        "suit": "C"
+      },
+      {
+        "id": "4C",
+        "rank": "4",
+        "suit": "C"
+      }
+    ],
+    "stockCount": 24,
+    "cut": null,
+    "pileCounts": [
+      0,
+      0
+    ],
+    "piles": [
+      [],
+      []
+    ],
+    "lastCapturer": null,
+    "chkobbas": [
+      0,
+      0
+    ],
+    "scores": [
+      0,
+      0
+    ],
+    "lastRound": null,
+    "winner": null,
+    "legalMoves": [
+      {
+        "seat": 1,
+        "cardId": "6H",
+        "capture": [
+          "6S"
+        ]
+      },
+      {
+        "seat": 1,
+        "cardId": "JH",
+        "capture": []
+      },
+      {
+        "seat": 1,
+        "cardId": "QS",
+        "capture": [
+          "6S",
+          "2C"
+        ]
+      },
+      {
+        "seat": 1,
+        "cardId": "QS",
+        "capture": [
+          "4H",
+          "4C"
+        ]
+      }
+    ]
+  },
+  "players": [
+    {
+      "name": "Player 1",
+      "isBot": false,
+      "away": false,
+      "connected": true
+    },
+    {
+      "name": "Player 2",
+      "isBot": false,
+      "away": false,
+      "connected": true
+    },
+    {
+      "name": "Player 3",
+      "isBot": false,
+      "away": false,
+      "connected": false
+    },
+    {
+      "name": "Player 4",
+      "isBot": false,
+      "away": false,
+      "connected": true
+    }
+  ],
+  "log": [
+    {
+      "seq": 1,
+      "event": {
+        "type": "dealerDrawn",
+        "draws": [
+          [
+            {
+              "seat": 0,
+              "card": {
+                "id": "3H",
+                "rank": "3",
+                "suit": "H"
+              }
+            },
+            {
+              "seat": 1,
+              "card": {
+                "id": "5S",
+                "rank": "5",
+                "suit": "S"
+              }
+            },
+            {
+              "seat": 2,
+              "card": {
+                "id": "KC",
+                "rank": "K",
+                "suit": "C"
+              }
+            },
+            {
+              "seat": 3,
+              "card": {
+                "id": "QC",
+                "rank": "Q",
+                "suit": "C"
+              }
+            }
+          ]
+        ],
+        "dealer": 0
+      }
+    },
+    {
+      "seq": 2,
+      "event": {
+        "type": "roundStarted",
+        "round": 1,
+        "dealer": 0,
+        "redeals": 0
+      }
+    },
+    {
+      "seq": 3,
+      "event": {
+        "type": "cutOffered",
+        "round": 1,
+        "seat": 1
+      }
+    },
+    {
+      "seq": 4,
+      "event": {
+        "type": "cutResolved",
+        "seat": 1,
+        "kept": true,
+        "card": null
+      }
+    },
+    {
+      "seq": 5,
+      "event": {
+        "type": "handsDealt",
+        "round": 1,
+        "deal": 1
+      }
+    }
+  ],
+  "turnDeadline": 1700000022000,
+  "backfillAt": null,
+  "nextRoundAt": null,
+  "serverTime": 1700000003000
+}

@@ -1,0 +1,8 @@
+node_modules/
+coverage/
+dist/
+.expo/
+*.log
+.DS_Store
+.playwright-mcp/
+/.idea/
